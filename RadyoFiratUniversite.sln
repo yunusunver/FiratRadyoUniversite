@@ -3,7 +3,43 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2042
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadyoFiratUniversite.RadyoFirat.Entities", "RadyoFiratUniversite.RadyoFirat.Entities\RadyoFiratUniversite.RadyoFirat.Entities.csproj", "{D89E8881-BF11-4C54-85E2-22ABA093F1E1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadyoFiratUniversite.RadyoFirat.DataAccess", "RadyoFiratUniversite.RadyoFirat.DataAccess\RadyoFiratUniversite.RadyoFirat.DataAccess.csproj", "{8BAC6C2F-95B4-46AB-8706-BD2D01AB858A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadyoFiratUniversite.RadyoFirat.Business", "RadyoFiratUniversite.RadyoFirat.Business\RadyoFiratUniversite.RadyoFirat.Business.csproj", "{3361A382-3C2B-4390-B448-9A09793E23AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadyoFiratUniversite.RadyoFirat.Core", "RadyoFiratUniversite.RadyoFirat.Core\RadyoFiratUniversite.RadyoFirat.Core.csproj", "{5F5F9B4F-B9DA-4D23-B9F7-B2A6F3400AB1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadyoFiratUniversite.RadyoFirat.WebUI", "RadyoFiratUniversite.RadyoFirat.WebUI\RadyoFiratUniversite.RadyoFirat.WebUI.csproj", "{D41D1EA2-AC03-41EB-AFD3-5F7CACEAED6C}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D89E8881-BF11-4C54-85E2-22ABA093F1E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D89E8881-BF11-4C54-85E2-22ABA093F1E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D89E8881-BF11-4C54-85E2-22ABA093F1E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D89E8881-BF11-4C54-85E2-22ABA093F1E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8BAC6C2F-95B4-46AB-8706-BD2D01AB858A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BAC6C2F-95B4-46AB-8706-BD2D01AB858A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BAC6C2F-95B4-46AB-8706-BD2D01AB858A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BAC6C2F-95B4-46AB-8706-BD2D01AB858A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3361A382-3C2B-4390-B448-9A09793E23AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3361A382-3C2B-4390-B448-9A09793E23AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3361A382-3C2B-4390-B448-9A09793E23AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3361A382-3C2B-4390-B448-9A09793E23AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F5F9B4F-B9DA-4D23-B9F7-B2A6F3400AB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F5F9B4F-B9DA-4D23-B9F7-B2A6F3400AB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F5F9B4F-B9DA-4D23-B9F7-B2A6F3400AB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F5F9B4F-B9DA-4D23-B9F7-B2A6F3400AB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D41D1EA2-AC03-41EB-AFD3-5F7CACEAED6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D41D1EA2-AC03-41EB-AFD3-5F7CACEAED6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D41D1EA2-AC03-41EB-AFD3-5F7CACEAED6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D41D1EA2-AC03-41EB-AFD3-5F7CACEAED6C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection

@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="ComplexType\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RadyoFiratUniversite.RadyoFirat.Core\RadyoFiratUniversite.RadyoFirat.Core.csproj" />
+  </ItemGroup>
+
+</Project>
