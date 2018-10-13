@@ -4,4 +4,9 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\RadyoFiratUniversite.RadyoFirat.DataAccess\RadyoFiratUniversite.RadyoFirat.DataAccess.csproj" />
+    <ProjectReference Include="..\RadyoFiratUniversite.RadyoFirat.Entities\RadyoFiratUniversite.RadyoFirat.Entities.csproj" />
+  </ItemGroup>
+
 </Project>
