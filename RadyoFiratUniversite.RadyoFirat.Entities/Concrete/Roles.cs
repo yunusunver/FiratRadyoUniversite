@@ -12,11 +12,11 @@ namespace RadyoFiratUniversite.RadyoFirat.Entities.Concrete
         public int Id { get; set; }
         public string Unvani { get; set; }
 
-        public virtual List<Kunye> Kunyes { get; set; }
+        public virtual List<Kunye> Kunye { get; set; }
 
         public Roles()
         {
-            Kunyes = new List<Kunye>();
+            Kunye = new List<Kunye>();
 
         }
 

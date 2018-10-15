@@ -13,8 +13,10 @@ namespace RadyoFiratUniversite.RadyoFirat.Entities.Concrete
         public int Id { get; set; }
         public string AdSoyad { get; set; }
         public string ImageUrl { get; set; }
-        public DateTime CreatedDate { get; set; }
-        public List<Yayin> Yayins  { get; set; }
+
+        public DateTime? CreatedDate{ get;set;}
+
+        public virtual List<Yayin> Yayins  { get; set; }
 
         public Programci()
         {

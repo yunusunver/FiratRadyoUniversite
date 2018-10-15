@@ -13,7 +13,7 @@ namespace RadyoFiratUniversite.RadyoFirat.Entities.Concrete
         public int Id { get; set; }
         public string Baslik { get; set; }
         public string Tanim { get; set; }
-        public DateTime? CreatedDate { get; set; }
+        public DateTime CreatedDate { get; set; }
 
     }
 }

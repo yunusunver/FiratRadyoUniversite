@@ -11,6 +11,17 @@ namespace RadyoFiratUniversite.RadyoFirat.Business.Concrete
     public class ProgramciManager:IProgramciService
     {
         private IProgramciDal _programciDal;
+
+        public ProgramciManager(IProgramciDal programciDal)
+        {
+            _programciDal = programciDal;
+        }
+
+        public Programci Get(int id)
+        {
+            return _programciDal.Get(x=>x.Id==id);
+        }
+
         public List<Programci> GetAll()
         {
             return _programciDal.GetList();
@@ -23,11 +34,13 @@ namespace RadyoFiratUniversite.RadyoFirat.Business.Concrete
 
         public void Add(Programci programci)
         {
+            programci.CreatedDate=DateTime.Now;
             _programciDal.Add(programci);
         }
 
         public void Update(Programci programci)
         {
+            
             _programciDal.Update(programci);
         }
 

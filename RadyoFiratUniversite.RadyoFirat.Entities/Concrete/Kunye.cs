@@ -9,11 +9,12 @@ namespace RadyoFiratUniversite.RadyoFirat.Entities.Concrete
 {
     public class Kunye : IEntity
     {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Key]
         public int Id { get; set; }
         public string Isim { get; set; }
+        [ForeignKey("Roles")]
         public int RoleId { get; set; }
-        public virtual Roles Role { get; set; }
+        public virtual Roles Roles { get; set; }
 
 
     }

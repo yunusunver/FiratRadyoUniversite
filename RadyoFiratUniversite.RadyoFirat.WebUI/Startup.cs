@@ -19,6 +19,14 @@ namespace RadyoFiratUniversite.RadyoFirat.WebUI
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<IIletisimDal, EfIletisimDal>();
+            services.AddScoped<IKunyeDal, EfKunyeDal>();
+            services.AddScoped<IKurumsalDal, EfKurumsalDal>();
+            services.AddScoped<IProgramciDal, EfProgramciDal>();
+            services.AddScoped<IRolesDal, EfRolesDal>();
+            services.AddScoped<IVitrinDal, EfVitrinDal>();
+            services.AddScoped<IYayinDal, EfYayinDal>();
+
             services.AddScoped<IIletisimService, IletisimManager>();
             services.AddScoped<IKunyeService, KunyeManager>();
             services.AddScoped<IKurumsalService, KurumsalManager>();
@@ -28,13 +36,7 @@ namespace RadyoFiratUniversite.RadyoFirat.WebUI
             services.AddScoped<IYayinService, YayinManager>();
 
 
-            services.AddScoped<IIletisimDal, EfIletisimDal>();
-            services.AddScoped<IKunyeDal, EfKunyeDal>();
-            services.AddScoped<IKurumsalDal, EfKurumsalDal>();
-            services.AddScoped<IProgramciDal, EfProgramciDal>();
-            services.AddScoped<IRolesDal, EfRolesDal>();
-            services.AddScoped<IVitrinDal, EfVitrinDal>();
-            services.AddScoped<IYayinDal, EfYayinDal>();
+           
             services.AddMvc();
         }
 
@@ -46,7 +48,8 @@ namespace RadyoFiratUniversite.RadyoFirat.WebUI
                 app.UseDeveloperExceptionPage();
             }
 
-        
+            app.UseStaticFiles();
+            app.UseMvcWithDefaultRoute();
         }
     }
 }

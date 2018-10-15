@@ -1,0 +1,46 @@
+﻿@model RadyoFiratUniversite.RadyoFirat.Entities.Concrete.Programci
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/_LayoutAdmin.cshtml";
+}
+
+@using (Html.BeginForm(Html.BeginForm("Edit", "Programci", FormMethod.Post, new { enctype = "multipart/form-data" })))
+{
+    <div class="form-horizontal">
+        <h3 class="sign-h text-danger">Yayıncı Düzenle</h3>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Id, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Id, new { htmlAttributes = new { @class = "form-control" , @readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.Id, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.AdSoyad, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.AdSoyad, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.AdSoyad, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ImageUrl, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input type="file" id="image" name="image" class="form-control" accept=".jpg,.png" />
+                @Html.ValidationMessageFor(model => model.ImageUrl, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Kaydet" class="btn btn-default" id="sign-frm-input-btn" />
+            </div>
+        </div>
+
+
+    </div>
+}

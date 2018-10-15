@@ -16,6 +16,10 @@ namespace RadyoFiratUniversite.RadyoFirat.Business.Concrete
             _rolesDal = rolesDal;
         }
 
+        public Roles Get(int id)
+        {
+            return _rolesDal.Get(x => x.Id == id);
+        }
         public List<Roles> GetAll()
         {
             return _rolesDal.GetList();

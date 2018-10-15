@@ -16,10 +16,11 @@ namespace RadyoFiratUniversite.RadyoFirat.Entities.Concrete
         public string BitisSaati { get; set; }
         public string Tanim { get; set; }
         public string Gun { get; set; }
-
+        [ForeignKey("Programci")]
+        public int ProgramciId { get; set; }
 
         public virtual Programci Programci { get; set; }
-        public int ProgramciId { get; set; }
+        
 
     }
 }

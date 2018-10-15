@@ -7,6 +7,7 @@ namespace RadyoFiratUniversite.RadyoFirat.Business.Abstract
 {
     public interface IProgramciService
     {
+        Programci Get(int id);
         List<Programci> GetAll();
         List<Programci> GetListByCreatedDate(DateTime createdDate);
         void Add(Programci programci);

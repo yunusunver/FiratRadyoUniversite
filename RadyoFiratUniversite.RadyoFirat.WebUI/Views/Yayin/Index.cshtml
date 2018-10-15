@@ -1,0 +1,43 @@
+﻿@model RadyoFiratUniversite.RadyoFirat.WebUI.Models.YayinListViewModel
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/_LayoutAdmin.cshtml";
+}
+
+<h2>Yayıncılar</h2>
+
+<p>
+    @Html.ActionLink("Yeni Yayın Oluştur", "Create", new {/* id=item.PrimaryKey */})
+</p>
+<table class="table">
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Yayın Adı</th>
+        <th>Açıklama</th>
+        <th>Gün</th>
+        <th>Başlangıç Saati</th>
+        <th>Bitiş Saati</th>
+        <th>İşlemler</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model.Yayinlar) {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.YayinAdi</td>
+            <td>@item.Tanim</td>
+            <td>@item.Gun</td>
+            <td>@item.BaslangicSaati</td>
+            <td>@item.BitisSaati</td>
+
+
+            <td>
+                @Html.ActionLink("Düzenle", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Sil", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
