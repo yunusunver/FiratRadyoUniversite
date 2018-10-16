@@ -6,9 +6,8 @@ using RadyoFiratUniversite.RadyoFirat.Entities.Concrete;
 
 namespace RadyoFiratUniversite.RadyoFirat.WebUI.Models
 {
-    public class RolesListViewModel
+    public class IletisimListViewModel
     {
-        public List<Roles> Roller { get; internal set; }
-        
+        public List<Iletisim> Iletisims { get; internal set; }
     }
 }

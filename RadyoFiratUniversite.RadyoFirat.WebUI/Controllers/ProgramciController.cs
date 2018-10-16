@@ -12,7 +12,7 @@ namespace RadyoFiratUniversite.RadyoFirat.WebUI.Controllers
 {
     public class ProgramciController : Controller
     {
-        private IProgramciService _programciService;
+        private readonly IProgramciService _programciService;
 
         public ProgramciController(IProgramciService programciService)
         {

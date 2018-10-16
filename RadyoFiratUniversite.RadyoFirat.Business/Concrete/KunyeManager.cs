@@ -17,9 +17,15 @@ namespace RadyoFiratUniversite.RadyoFirat.Business.Concrete
             _kunyeDal = kunyeDal;
         }
 
+        public Kunye Get(int id)
+        {
+            return _kunyeDal.Get(x=>x.Id==id);
+        }
+
+
         public List<Kunye> GetAll()
         {
-            return _kunyeDal.GetList().OrderByDescending(x=>x.Id).ToList();
+            return _kunyeDal.GetAllKunye().OrderBy(x=>x.RoleId).ToList();
         }
 
         public void Add(Kunye kunye)

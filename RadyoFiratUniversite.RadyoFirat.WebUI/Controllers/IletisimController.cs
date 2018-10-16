@@ -9,40 +9,47 @@ using RadyoFiratUniversite.RadyoFirat.WebUI.Models;
 
 namespace RadyoFiratUniversite.RadyoFirat.WebUI.Controllers
 {
-    public class RolesController : Controller
+    public class IletisimController : Controller
     {
-        private IRolesService _rolesService;
+        private IIletisimService _iletisimService;
 
-        public RolesController(IRolesService rolesService)
+        public IletisimController(IIletisimService iletisimService)
         {
-            _rolesService = rolesService;
+            _iletisimService = iletisimService;
         }
 
         public ActionResult Index()
         {
-            var roller = _rolesService.GetAll();
+            var iletisim = _iletisimService.GetAll();
 
-            RolesListViewModel model=new RolesListViewModel
+            IletisimListViewModel model=new IletisimListViewModel
             {
-                Roller = roller
+                Iletisims=iletisim
             };
 
             return View(model);
+        }
+
+        public ActionResult Delete(int id)
+        {
+            _iletisimService.Delete(id);
+            return RedirectToAction("Index");
         }
 
         public ActionResult Create()
         {
             return View();
         }
+
         [HttpPost]
-        public ActionResult Create(Roles roles)
+        public ActionResult Create(Iletisim iletisim)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    _rolesService.Add(roles);
-                   
+                    _iletisimService.Add(iletisim);
+
 
                 }
                 return RedirectToAction("Index");
@@ -53,22 +60,16 @@ namespace RadyoFiratUniversite.RadyoFirat.WebUI.Controllers
             }
         }
 
-        public ActionResult Delete(int id)
-        {
-            _rolesService.Delete(id);
-            return RedirectToAction("Index");
-        }
-
         public ActionResult Edit(int id)
         {
-            var unvan = _rolesService.Get(id);
-            return View(unvan);
+            var bulunanIletisim = _iletisimService.Get(id);
+            return View(bulunanIletisim);
         }
 
         [HttpPost]
-        public ActionResult Edit(Roles roles)
+        public ActionResult Edit(Iletisim iletisim)
         {
-            _rolesService.Update(roles);
+            _iletisimService.Update(iletisim);
             return RedirectToAction("Index");
         }
     }

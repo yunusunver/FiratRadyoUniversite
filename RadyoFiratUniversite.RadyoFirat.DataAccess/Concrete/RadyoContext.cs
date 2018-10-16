@@ -12,7 +12,7 @@ namespace RadyoFiratUniversite.RadyoFirat.DataAccess.Concrete
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(@"Server=DESKTOP-D0LF9Q3\SQLEXPRESS;Database=RadyoFirat;Trusted_Connection=true");
-
+            
         }
 
         public DbSet<Iletisim> Iletisim { get; set; }

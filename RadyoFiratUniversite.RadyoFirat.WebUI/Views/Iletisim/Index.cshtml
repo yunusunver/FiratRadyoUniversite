@@ -1,28 +1,31 @@
-﻿@model RadyoFiratUniversite.RadyoFirat.WebUI.Models.RolesListViewModel
+﻿
+@model RadyoFiratUniversite.RadyoFirat.WebUI.Models.IletisimListViewModel
 
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/_LayoutAdmin.cshtml";
 }
-<h2>Görev Tanımları</h2>
+
+<h2>Görevliler</h2>
 
 <p>
-    @Html.ActionLink("Yeni Ünvan Oluştur", "Create", new {/* id=item.PrimaryKey */})
+    @Html.ActionLink("Yeni Adres Oluştur", "Create", new {/* id=item.PrimaryKey */})
 </p>
 <table class="table">
     <thead>
     <tr>
         <th>Id</th>
-        <th>Ünvan</th>
+        <th>Adres Tanımı</th>
+        <th>Adres</th>
         <th>İşlemler</th>
-       
     </tr>
     </thead>
     <tbody>
-    @foreach (var item in Model.Roller) {
+    @foreach (var item in Model.Iletisims) {
         <tr>
             <td>@item.Id</td>
-            <td>@item.Unvani</td>
+            <td>@item.Deger</td>
+            <td>@item.Ozellik</td>
             <td>
                 @Html.ActionLink("Düzenle", "Edit", new {id=item.Id}) |
                 @Html.ActionLink("Sil", "Delete", new {id=item.Id})

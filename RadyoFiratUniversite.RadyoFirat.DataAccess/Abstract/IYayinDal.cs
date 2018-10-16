@@ -8,5 +8,6 @@ namespace RadyoFiratUniversite.RadyoFirat.DataAccess.Abstract
 {
     public interface IYayinDal:IEntityRepository<Yayin>
     {
+        List<Yayin> GetListProgramci();
     }
 }

@@ -1,0 +1,36 @@
+﻿
+@model RadyoFiratUniversite.RadyoFirat.WebUI.Models.KunyeListViewModel
+
+@{
+        ViewData["Title"] = "Index";
+        Layout = "~/Views/_LayoutAdmin.cshtml";
+    }
+
+<h2>Görevliler</h2>
+
+<p>
+    @Html.ActionLink("Yeni Görevli Oluştur", "Create", new {/* id=item.PrimaryKey */})
+</p>
+<table class="table">
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Ad Soyad</th>
+        <th>Ünvanı</th>
+        <th>İşlemler</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model.Kunyes) {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Isim</td>
+            <td>@item.Roles.Unvani</td>
+            <td>
+                @Html.ActionLink("Düzenle", "Edit", new {id=item.Id}) |
+                @Html.ActionLink("Sil", "Delete", new {id=item.Id})
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

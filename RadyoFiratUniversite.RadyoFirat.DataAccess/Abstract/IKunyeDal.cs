@@ -8,5 +8,6 @@ namespace RadyoFiratUniversite.RadyoFirat.DataAccess.Abstract
 {
     public interface IKunyeDal:IEntityRepository<Kunye>
     {
+        List<Kunye> GetAllKunye();
     }
 }

@@ -19,7 +19,7 @@ namespace RadyoFiratUniversite.RadyoFirat.Business.Concrete
 
         public List<Yayin> GetAll()
         {
-            return _yayinDal.GetList();
+            return _yayinDal.GetListProgramci();
         }
 
         public List<Yayin> GetListBySaati(string baslangicSaati)

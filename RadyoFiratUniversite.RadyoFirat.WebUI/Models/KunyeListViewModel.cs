@@ -6,9 +6,9 @@ using RadyoFiratUniversite.RadyoFirat.Entities.Concrete;
 
 namespace RadyoFiratUniversite.RadyoFirat.WebUI.Models
 {
-    public class RolesListViewModel
+    public class KunyeListViewModel
     {
-        public List<Roles> Roller { get; internal set; }
-        
+        public List<Kunye> Kunyes { get;  set; }
+
     }
 }

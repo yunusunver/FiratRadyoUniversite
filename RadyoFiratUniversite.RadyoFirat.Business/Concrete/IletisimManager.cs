@@ -17,6 +17,10 @@ namespace RadyoFiratUniversite.RadyoFirat.Business.Concrete
             _iletisimDal = iletisimDal;
         }
 
+        public Iletisim Get(int id)
+        {
+            return _iletisimDal.Get(x => x.Id == id);
+        }
         public List<Iletisim> GetAll()
         {
             return _iletisimDal.GetList();

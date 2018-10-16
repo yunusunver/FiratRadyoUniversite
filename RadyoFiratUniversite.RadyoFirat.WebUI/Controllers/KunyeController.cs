@@ -9,24 +9,27 @@ using RadyoFiratUniversite.RadyoFirat.WebUI.Models;
 
 namespace RadyoFiratUniversite.RadyoFirat.WebUI.Controllers
 {
-    public class RolesController : Controller
+    public class KunyeController : Controller
     {
-        private IRolesService _rolesService;
+        private IKunyeService _kunyeService;
+        
 
-        public RolesController(IRolesService rolesService)
+        public KunyeController(IKunyeService kunyeService) 
         {
-            _rolesService = rolesService;
+            
+            _kunyeService=kunyeService;
         }
+
+        
 
         public ActionResult Index()
         {
-            var roller = _rolesService.GetAll();
-
-            RolesListViewModel model=new RolesListViewModel
+           
+            KunyeListViewModel model=new KunyeListViewModel
             {
-                Roller = roller
+                Kunyes=_kunyeService.GetAll()
+                
             };
-
             return View(model);
         }
 
@@ -35,14 +38,14 @@ namespace RadyoFiratUniversite.RadyoFirat.WebUI.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Create(Roles roles)
+        public ActionResult Create(Kunye kunye)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    _rolesService.Add(roles);
-                   
+                    _kunyeService.Add(kunye);
+
 
                 }
                 return RedirectToAction("Index");
@@ -55,20 +58,20 @@ namespace RadyoFiratUniversite.RadyoFirat.WebUI.Controllers
 
         public ActionResult Delete(int id)
         {
-            _rolesService.Delete(id);
+            _kunyeService.Delete(id);
             return RedirectToAction("Index");
         }
 
         public ActionResult Edit(int id)
         {
-            var unvan = _rolesService.Get(id);
-            return View(unvan);
+            var bulunanKunye = _kunyeService.Get(id);
+            return View(bulunanKunye);
         }
 
         [HttpPost]
-        public ActionResult Edit(Roles roles)
+        public ActionResult Edit(Kunye kunye)
         {
-            _rolesService.Update(roles);
+            _kunyeService.Update(kunye);
             return RedirectToAction("Index");
         }
     }
