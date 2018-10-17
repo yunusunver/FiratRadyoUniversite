@@ -50,6 +50,14 @@
                 @Html.ValidationMessageFor(model => model.BitisSaati, "", new { @class = "text-danger" })
             </div>
         </div>
+        
+        <div class="form-group">
+            @Html.LabelFor(model => model.ProgramciId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.ProgramciId, (IEnumerable<SelectListItem>)ViewBag.Unvanlar, new { @class="form-control" })
+                @Html.ValidationMessageFor(model => model.ProgramciId, "", new { @class = "text-danger" })
+            </div>
+        </div>
 
 
 

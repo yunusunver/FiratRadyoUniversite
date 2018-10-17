@@ -30,11 +30,13 @@ namespace RadyoFiratUniversite.RadyoFirat.Business.Concrete
 
         public void Add(Kunye kunye)
         {
+           
             _kunyeDal.Add(kunye);
         }
 
         public void Update(Kunye kunye)
         {
+           
             _kunyeDal.Update(kunye);
         }
 
