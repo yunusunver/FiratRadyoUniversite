@@ -34,4 +34,8 @@
     <ProjectReference Include="..\RadyoFiratUniversite.RadyoFirat.DataAccess\RadyoFiratUniversite.RadyoFirat.DataAccess.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\image\Programcilar\" />
+  </ItemGroup>
+
 </Project>

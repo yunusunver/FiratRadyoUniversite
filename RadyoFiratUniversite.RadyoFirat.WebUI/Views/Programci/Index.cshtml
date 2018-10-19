@@ -26,10 +26,10 @@
             <td>@item.Id</td>
             <td>@item.AdSoyad</td>
             <td>@item.CreatedDate</td>
-            <td>@item.ImageUrl</td>
+            <td><img src="@item.ImageUrl"  width="50" height="50"/></td>
             <td>
-                @Html.ActionLink("Düzenle", "Edit", new {id=item.Id}) |
-                @Html.ActionLink("Sil", "Delete", new {id=item.Id})
+                @Html.ActionLink("Düzenle", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Sil", "Delete", new { id = item.Id })
             </td>
         </tr>
 }

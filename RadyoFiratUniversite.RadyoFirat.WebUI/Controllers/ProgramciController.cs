@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
@@ -36,10 +37,31 @@ namespace RadyoFiratUniversite.RadyoFirat.WebUI.Controllers
         {
             return View();
         }
+        //[HttpPost]
+        //public ActionResult Create(Programci programci)
+        //{
+        //    _programciService.Add(programci);
+        //    return RedirectToAction("Index");
+        //}
         [HttpPost]
-        public ActionResult Create(Programci programci)
+        public async Task<IActionResult> Create(IFormFile image,Programci programci)
         {
+            if (image==null || image.Length==0)
+            {
+                return Content("not image selected");
+            }
+
+            var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/image/Programcilar", image.FileName);
+
+            using (var stream = new FileStream(path, FileMode.Create))
+            {
+                await image.CopyToAsync(stream);
+               
+            }
+
+            programci.ImageUrl = "/image/Programcilar/"+ image.FileName;
             _programciService.Add(programci);
+
             return RedirectToAction("Index");
         }
 
@@ -48,6 +70,11 @@ namespace RadyoFiratUniversite.RadyoFirat.WebUI.Controllers
         
         public ActionResult Delete(int id)
         {
+            var bulunanProgramci = _programciService.Get(id);
+            if (System.IO.File.Exists())
+            {
+                System.IO.File.Delete();
+            }
             _programciService.Delete(id);
             return RedirectToAction("Index");
         }
