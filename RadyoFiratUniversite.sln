@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2042
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadyoFiratUniversite.RadyoFirat.Entities", "RadyoFiratUniversite.RadyoFirat.Entities\RadyoFiratUniversite.RadyoFirat.Entities.csproj", "{D89E8881-BF11-4C54-85E2-22ABA093F1E1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RadyoFiratUniversite.RadyoFirat.Entities", "RadyoFiratUniversite.RadyoFirat.Entities\RadyoFiratUniversite.RadyoFirat.Entities.csproj", "{D89E8881-BF11-4C54-85E2-22ABA093F1E1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadyoFiratUniversite.RadyoFirat.DataAccess", "RadyoFiratUniversite.RadyoFirat.DataAccess\RadyoFiratUniversite.RadyoFirat.DataAccess.csproj", "{8BAC6C2F-95B4-46AB-8706-BD2D01AB858A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RadyoFiratUniversite.RadyoFirat.DataAccess", "RadyoFiratUniversite.RadyoFirat.DataAccess\RadyoFiratUniversite.RadyoFirat.DataAccess.csproj", "{8BAC6C2F-95B4-46AB-8706-BD2D01AB858A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadyoFiratUniversite.RadyoFirat.Business", "RadyoFiratUniversite.RadyoFirat.Business\RadyoFiratUniversite.RadyoFirat.Business.csproj", "{3361A382-3C2B-4390-B448-9A09793E23AD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RadyoFiratUniversite.RadyoFirat.Business", "RadyoFiratUniversite.RadyoFirat.Business\RadyoFiratUniversite.RadyoFirat.Business.csproj", "{3361A382-3C2B-4390-B448-9A09793E23AD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadyoFiratUniversite.RadyoFirat.Core", "RadyoFiratUniversite.RadyoFirat.Core\RadyoFiratUniversite.RadyoFirat.Core.csproj", "{5F5F9B4F-B9DA-4D23-B9F7-B2A6F3400AB1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RadyoFiratUniversite.RadyoFirat.Core", "RadyoFiratUniversite.RadyoFirat.Core\RadyoFiratUniversite.RadyoFirat.Core.csproj", "{5F5F9B4F-B9DA-4D23-B9F7-B2A6F3400AB1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadyoFiratUniversite.RadyoFirat.WebUI", "RadyoFiratUniversite.RadyoFirat.WebUI\RadyoFiratUniversite.RadyoFirat.WebUI.csproj", "{D41D1EA2-AC03-41EB-AFD3-5F7CACEAED6C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RadyoFiratUniversite.RadyoFirat.WebUI", "RadyoFiratUniversite.RadyoFirat.WebUI\RadyoFiratUniversite.RadyoFirat.WebUI.csproj", "{D41D1EA2-AC03-41EB-AFD3-5F7CACEAED6C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

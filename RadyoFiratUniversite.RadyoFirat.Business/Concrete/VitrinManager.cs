@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using RadyoFiratUniversite.RadyoFirat.Business.Abstract;
 using RadyoFiratUniversite.RadyoFirat.DataAccess.Abstract;
@@ -16,13 +17,19 @@ namespace RadyoFiratUniversite.RadyoFirat.Business.Concrete
             _vitrinDal = vitrinDal;
         }
 
+        public Vitrin Get(int id)
+        {
+            return _vitrinDal.Get(x => x.Id == id);
+        }
+
         public List<Vitrin> GetAll()
         {
-            return _vitrinDal.GetList();
+            return _vitrinDal.GetList().OrderByDescending(x=>x.CreatedDate).ToList();
         }
 
         public void Add(Vitrin vitrin)
         {
+            vitrin.CreatedDate=DateTime.Now;
             _vitrinDal.Add(vitrin);
         }
 
