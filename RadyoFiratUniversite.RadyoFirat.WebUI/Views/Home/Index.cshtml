@@ -1,0 +1,580 @@
+﻿@model RadyoFiratUniversite.RadyoFirat.WebUI.Models.HomeListViewModel
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from demo.gridgum.com/templates/radio-fm/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 29 Nov 2018 08:12:39 GMT -->
+<head>
+    <title>RADIO FM - Bootstrap responsive template</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Your description">
+    <meta name="keywords" content="Your keywords">
+    <meta name="author" content="Your name">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/font-awesome.css" rel="stylesheet">
+    <link href="css/camera.css" rel="stylesheet">
+    <link href="css/audio4_html5.css" rel="stylesheet">
+    <link href="css/mediaelementplayer.css" rel="stylesheet">
+    <link href="css/slick.css" rel="stylesheet">
+    <link href="css/slick-theme.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body class="onepage front" data-spy="scroll" data-target="#top1" data-offset="92">
+
+    <div id="load"></div>
+
+    <div id="main">
+
+        <div id="home">
+            <div class="logo3_wrapper">
+                <a href="#home" class="logo3 scroll-to">
+                    <img src="images/radyoFırat.png" alt="" class="img-responsive">
+                </a>
+            </div>
+          
+            <div id="slider_wrapper">
+                <div class="go-down"><a href="#featured" class="scroll-to"></a></div>
+                <div class="">
+                    <div id="slider_inner" class="clearfix">
+                        <div id="slider" class="clearfix">
+                            <div id="camera_wrap">
+                                
+                                @foreach (var item in Model.Vitrins)
+                                {
+                                    <div data-src="@item.ImageUrl">
+                                        <div class="camera_caption fadeFromLeft nav1">
+                                            <div class="txt1 txt">@item.BirinciKelime</div>
+                                            <div class="txt2 txt">@item.IkinciKelime</div>
+                                            <div class="txt3 txt">@item.UcuncuKelime</div>
+                                            <div class="txt4">06:00 - 24:00</div>
+                                            
+                                        </div>
+                                    </div>
+                                }
+                                
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="song1_wrapper">
+                <div class="container">
+                    <div class="audio4_html5">
+                        <audio id="audio4_html5_white" class="liveRadio" preload="metadata">
+                            <div class="xaudioplaylist">
+                                <ul>
+                                    <ul>
+                                        <li class="xradiostream">http://radyofirat.radyotvyayini.com:8920/;</li>  <!-- Shoutcast -->
+                                    </ul>
+
+                                    <li class="xradiostream">http://radyofirat.radyotvyayini.com:8920/;</li>    <!-- IceCast -->
+                                </ul>
+                                <ul>
+                                    <li class="xradiostream">http://radyofirat.radyotvyayini.com:8920/;</li> <!-- radionomy.com -->
+                                </ul>
+                                <ul>
+                                    <li class="xradiostream">http://radyofirat.radyotvyayini.com:8920/;</li> <!-- radionomy.com -->
+                                </ul>
+                                <ul>
+                                    <li class="xradiostream">http://radyofirat.radyotvyayini.com:8920/;</li> <!-- radionomy.com -->
+                                </ul>
+                            </div>
+                            No HTML5 audio playback capabilities for this browser. Use
+                            <a href="https://www.google.com/intl/en/chrome/browser/">Chrome Browser!</a>
+                        </audio>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="top1">
+            <div class="top2_wrapper" id="top2">
+                <div class="container">
+
+                    <div class="top2 clearfix">
+
+                        <header>
+                            <div class="logo_wrapper">
+                                <a href="#home" class="logo scroll-to">
+                                    <img src="images/radyoFırat.png" alt="" class="img-responsive">
+                                </a>
+                            </div>
+                        </header>
+
+                        <div class="menu_wrapper">
+                           
+                            <div class="navbar navbar_ navbar-default">
+                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                                        data-target=".navbar-collapse">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                                <div class="navbar-collapse navbar-collapse_ collapse">
+                                    <ul class="nav navbar-nav sf-menu clearfix">
+                                        <li>
+                                            <a href="#home">ANASAYFA</a>
+
+                                        </li>
+                                     
+                                       
+                                        <li class="sub-menu sub-menu-1">
+                                            <a href="javascript:void(0);">KURUMSAL<em></em></a>
+                                            <ul>
+                                                <li><a href="#collection">HAKKIMIZDA</a></li>
+                                                <li><a href="#yonetim">YÖNETİM</a></li>
+                                               
+
+                                              
+                                            </ul>
+                                        </li>
+                                        <li><a href="#featured">YAYINCILARIMIZ</a></li>
+                                        <li><a href="#top30">Top 30</a></li>
+                                       
+                                        <li><a href="#contacts">İLETİŞİM</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div id="featured">
+            <div class="container">
+
+                <div class="title1 animated" data-animation="fadeInUp" data-animation-delay="100">
+                    Fırat Radyo
+                    FM - <b>89.2</b>
+                </div>
+
+                <div class="kand1 animated" data-animation="fadeInUp" data-animation-delay="200"></div>
+
+                <div class="title2 animated" data-animation="fadeInUp" data-animation-delay="300">YAYINCILARIMIZ</div>
+
+
+
+            </div>
+
+
+            <div class="slick-slider-wrapper">
+                <div class="container">
+                    <div class="slick-slider slider center">
+                        
+                        
+                        @foreach (var item in Model.Programcis)
+                        {
+                            <div>
+                                <div class="slick-slider-inner">
+                                    <figure><img src="@item.ImageUrl" alt="" class="img-responsive"></figure>
+                                    <div class="caption">
+                                        <div class="txt1"><span>Müzik - Radyo  </span></div>
+                                        <div class="txt2"><span>@item.AdSoyad</span></div>
+                                        
+                                    </div>
+                                    <div class="slick-slider-overlay"></div>
+                                </div>
+                            </div>
+                        }
+
+                        
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="container" id="top30">
+
+                <div class="title2 animated" data-animation="fadeInUp" data-animation-delay="100">
+                    TOP 30
+                </div>
+
+               
+
+                <br><br><br>
+
+                <div class="radios animated" data-animation="fadeInUp" data-animation-delay="300">
+                    <div class="radio1 head clearfix">
+                        <div class="sec1">Top Sırası</div>
+                        <div class="sec2"></div>
+                        <div class="sec3">Sanatçı</div>
+                        <div class="sec4"> </div>
+                        <div class="sec5">Şarkı </div>
+                        <div class="sec6"> </div>
+
+                        <div class="sec7">Dinle</div>
+                    </div>
+                @foreach (var item in Model.Top30)
+                {
+                    <div class="radio1 clearfix">
+                        <div class="sec1">@item.TopSirasi</div>
+                        <div class="sec2"></div>
+                        <div class="sec3">@item.SanatciAdi</div>
+                        <div class="sec4"> </div>
+                        <div class="sec5">@item.SarkiAdi </div>
+                        <div class="sec6"> </div>
+
+                        <div class="sec7"> 89.2</div>
+
+                    </div>
+                }
+
+
+
+
+                </div>
+
+            
+
+            </div>
+
+
+        </div>
+
+        <div id="collection">
+            <div class="container">
+
+               
+
+                <div class="title2 animated" data-animation="fadeInUp" data-animation-delay="200">
+                    HAKKIMIZDA
+                </div>
+
+                <div class="title3 animated" data-animation="fadeInUp" data-animation-delay="300">
+                    Doğuş Grubu’nun ulaştığı başarının arkasında, müşteri odaklı ve verimliliği merkez alan bir yönetim yaklaşımı yer alıyor. Bu yaklaşımın bir sonucu olarak, Grup dünya ölçeğinde saygın markalarla yaptığı iş birlikleriyle, Türkiye’yi bütün dünyada temsil ediyor. Doğuş Grubu’nun, otomotivde Volkswagen AG ve TÜVSÜD, medyada Condé Nast (Vogue, GQ, Traveller), turizmde Hyatt International Ltd, marinacılıkta Latsis Grubu, Kiriacoulis Grubu ve Adriatic Croatia International (ACI) Grubu’nun yanı sıra yeme-içme ve eğlence sektöründe de bünyesinde Coya, Roka, Zuma ve Oblix gibi markaları bulunduran uluslararası Azumi Grubu ve e-ticaret alanında Güney Koreli SK Group gibi büyük küresel oyuncularla iş birlikleri ve ortaklıkları bulunuyor.
+                </div>
+
+                <br><br>
+
+                <div class="row">
+                    <div class="col-sm-9 animated" data-animation="fadeInLeft" data-animation-delay="100">
+                        <img src="images/best0.png" alt="" class="img-responsive">
+                    </div>
+                    <div class="col-sm-3 animated" data-animation="fadeInRight" data-animation-delay="200">
+
+                        <div class="best0">
+                            <div class="txt1">Fırat Radyo Top 30 Listesi</div>
+                            <div class="txt2">TOP 30</div>
+                            <div class="kand2"></div>
+                            <div class="best_list">
+                                @foreach (var item in Model.Top30)
+                                {
+                                    <div class="clearfix">
+                                        <div class="right">@item.SarkiAdi</div>
+                                        <div class="left"><span>@item.TopSirasi</span>. @item.SanatciAdi</div>
+                                    </div>
+                                }
+                               
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="collection2">
+            <div class="container">
+
+                <div class="title1 animated" data-animation="fadeInUp" data-animation-delay="100">
+                    Listen it from
+                    www.Yoursite.com
+                </div>
+
+                <div class="title2 animated" data-animation="fadeInUp" data-animation-delay="200">
+                    ABOUT OUR RADIO STATION
+                </div>
+
+                <div class="title3 animated" data-animation="fadeInUp" data-animation-delay="300">
+                    Lorem ipsum dolor sit amet
+                    concateur non tropp sit namo, allegro sustenuto al prada bravo pensare, chicco milo naturo<br>el spresso
+                    concateur non value maro noro strata. notn troppo.
+                </div>
+
+                <br><br>
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="thumb7 animated" data-animation="fadeInUp" data-animation-delay="200">
+                            <div class="thumbnail clearfix">
+                                <figure class="">
+                                    <img src="images/style010.jpg" alt="" class="img-responsive">
+                                </figure>
+                                <div class="caption">
+                                    <div class="title">Lorem Ipsum Dolor</div>
+                                    <p>
+                                        Etiam pharetra ut ante eget efficitur. Nullam quis felis at nunc vehicula
+                                        sollicitudin ut ex. Maecenas eget volutpat turpis. Praesent dapibus eleifend augue,
+                                        eget sollicitudin velit malesuada eu. Aliquam blandit, diam ac venenatis feugiat,
+                                        tellus odio malesuada ex, eu luctus lectus nibh et velit.
+                                    </p>
+                                    <a href="#" class="btn-default btn5">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="thumb7 animated" data-animation="fadeInUp" data-animation-delay="300">
+                            <div class="thumbnail clearfix">
+                                <figure class="">
+                                    <img src="images/style009.jpg" alt="" class="img-responsive">
+                                </figure>
+                                <div class="caption">
+                                    <div class="title">Best Music Online</div>
+                                    <p>
+                                        Etiam pharetra ut ante eget efficitur. Nullam quis felis at nunc vehicula
+                                        sollicitudin ut ex. Maecenas eget volutpat turpis. Praesent dapibus eleifend augue,
+                                        eget sollicitudin velit malesuada eu. Aliquam blandit, diam ac venenatis feugiat,
+                                        tellus odio malesuada ex, eu luctus lectus nibh et velit.
+                                    </p>
+                                    <a href="#" class="btn-default btn5">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+        <div id="yonetim">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="speaker-wrapper">
+                            <img src="images/speaker.jpg" alt="" class="img-responsive">
+
+                            <div class="speaker-img"><img src="images/speaker.jpg" alt="" class="img-responsive"></div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+
+                        <div id="testim_wrapper">
+
+                            
+                            <div class="title2">YÖNETİM KADROMUZ</div>
+
+                            <div id="testim">
+                                <div class="carousel-box">
+                                    <div class="inner">
+                                        <div class="carousel main">
+                                            <ul>
+                                              @foreach (var item in Model.Kunyes)
+                                              {
+                                                  <li>
+                                                      <div class="testim">
+                                                          <div class="testim_inner">
+                                                              <div class="txt1">
+                                                                 @item.Isim
+                                                              </div>
+                                                              <div class="txt2">@item.Roles.Unvani</div>
+                                                              
+                                                          </div>
+                                                      </div>
+                                                  </li>
+                                              }
+
+
+
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="testim_pagination"></div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="contacts">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-sm-push-6 animated" data-animation="fadeInUp" data-animation-delay="200">
+                        <img src="https://www.alchemyinteractive.co.uk/images/blog/thumbs_up_noBackground.png" alt="" class="img-responsive dancer">
+                    </div>
+                    <div class="col-sm-6 col-sm-pull-6 animated" data-animation="fadeInLeft" data-animation-delay="200">
+
+                        
+
+                        <div class="title2">SOSYAL MEDYA HESAPLARIMIZ</div>
+
+                        <br>
+
+                      
+
+                        <div class="social_wrapper">
+                            <ul class="social clearfix">
+                                <li class="nav1"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li class="nav2"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li class="nav3"><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                <li class="nav4"><a href="#"><i class="fa fa-vimeo"></i></a></li>
+                            </ul>
+                        </div>
+
+                        <div id="note"></div>
+                    
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bot1_wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4">
+
+                        <div class="logo2_wrapper">
+                            <a href="index-2.html" class="logo2">
+                                <img src="images/radyoFırat.png" alt="" class="img-responsive">
+                            </a>
+                        </div>
+
+                        <p>
+                            İletişim Adreslerimiz
+                        </p>
+
+                        <div class="location1">Fırat Üniversitesi Rektörlük Kampüsü Merkez/Elazığ <br>Türkiye</div>
+
+                        <div class="phone1">+90 424 237 91 40 (Tel)</div>
+
+                        <div class="mail1"><a href="#">bilgi@firatradyotv.com</a></div>
+
+                    </div>
+                    <div class="col-sm-3">
+
+
+                  
+
+                    </div>
+                    <div class="col-sm-4 col-sm-offset-1">
+
+                        <div class="bot1_title">LATEST NEWS</div>
+
+                        <div class="latest1">
+                            <a href="#" class="clearfix">
+                                <figure><img src="images/latest01.jpg" alt=""></figure>
+                                <div class="caption">
+                                    <div class="txt1">
+                                        Lorem ipsum dolor sit amet, concateur un otto bravo netto, sustenuto
+                                        non troppo.
+                                    </div>
+                                    <div class="txt2">January 17 - 2016</div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="latest1">
+                            <a href="#" class="clearfix">
+                                <figure><img src="images/latest02.jpg" alt=""></figure>
+                                <div class="caption">
+                                    <div class="txt1">
+                                        Lorem ipsum dolor sit amet, concateur un otto bravo netto, sustenuto
+                                        non troppo.
+                                    </div>
+                                    <div class="txt2">February 11 - 2016</div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="latest1 last">
+                            <a href="#" class="clearfix">
+                                <figure><img src="images/latest03.jpg" alt=""></figure>
+                                <div class="caption">
+                                    <div class="txt1">
+                                        Lorem ipsum dolor sit amet, concateur un otto bravo netto, sustenuto
+                                        non troppo.
+                                    </div>
+                                    <div class="txt2">March 21 - 2016</div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <a href="#" class="btn-default btn3">READ MORE</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bot2_wrapper">
+            <div class="container">
+                Copyright © 2018  <a href="https://gridgum.com/themes/category/radio-templates/"><b>ADMİN</b></a>
+            </div>
+        </div>
+
+
+    </div>
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery-migrate-1.2.1.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/superfish.js"></script>
+
+    <script src="js/camera.js"></script>
+
+    <script src="js/mediaelement-and-player.js"></script>
+    <script src="js/mep-feature-playlist.js"></script>
+    <script src="js/slick.min.js"></script>
+
+    <script src="js/jquery.jrumble.1.3.min.js"></script>
+
+    <script src="js/jquery.sticky.js"></script>
+
+    <script src="js/jquery.queryloader2.js"></script>
+
+    <script src="js/jquery.appear.js"></script>
+
+    <script src="js/jquery.ui.totop.js"></script>
+    <script src="js/jquery.equalheights.js"></script>
+
+    <script src="js/jquery.caroufredsel.js"></script>
+    <script src="js/jquery.touchSwipe.min.js"></script>
+
+    <script src="js/SmoothScroll.js"></script>
+
+    <script src="js/cform.js"></script>
+
+    <script type="text/javascript" src="js/lastfm.api.md5.js"></script>
+    <script type="text/javascript" src="js/lastfm.api.js"></script>
+    <script type="text/javascript" src="js/lastfm.api.cache.js"></script>
+    <script type="text/javascript" src="js/swfobject.js"></script>
+    <script src="js/jquery.mousewheel.min.js" type="text/javascript"></script>
+    <script src="js/audio4_html5.js" type="text/javascript"></script>
+
+    <script src="js/scripts.js"></script>
+</body>
+
+<!-- Mirrored from demo.gridgum.com/templates/radio-fm/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 29 Nov 2018 08:13:05 GMT -->
+</html>

@@ -13,6 +13,9 @@ namespace RadyoFiratUniversite.RadyoFirat.Entities.Concrete
         public int Id { get; set; }
         public string ImageUrl { get; set; }
         public DateTime CreatedDate { get; set; }
+        public string BirinciKelime { get; set; }
+        public string IkinciKelime { get; set; }
+        public string UcuncuKelime { get; set; }
 
     }
 }

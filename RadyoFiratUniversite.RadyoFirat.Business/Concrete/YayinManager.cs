@@ -41,7 +41,10 @@ namespace RadyoFiratUniversite.RadyoFirat.Business.Concrete
 
         public void Delete(int yayinId)
         {
+            
             _yayinDal.Delete(new Yayin(){Id = yayinId});
         }
+
+      
     }
 }

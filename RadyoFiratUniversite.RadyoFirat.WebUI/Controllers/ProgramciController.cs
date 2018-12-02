@@ -15,13 +15,17 @@ namespace RadyoFiratUniversite.RadyoFirat.WebUI.Controllers
     public class ProgramciController : Controller
     {
         private readonly IProgramciService _programciService;
+        private IYayinService _yayinService;
         private IHostingEnvironment _env;
 
-        public ProgramciController(IProgramciService programciService,IHostingEnvironment env)
+        public ProgramciController(IProgramciService programciService, IYayinService yayinService, IHostingEnvironment env)
         {
             _programciService = programciService;
+            _yayinService = yayinService;
             _env = env;
         }
+
+       
 
         public ActionResult Index()
         {
@@ -74,6 +78,7 @@ namespace RadyoFiratUniversite.RadyoFirat.WebUI.Controllers
         public ActionResult Delete(int id)
         {
             var bulunanProgramci = _programciService.Get(id);
+            
             //var path = Path.Combine(_env.ContentRootPath, "\\wwwroot", bulunanProgramci.ImageUrl);
             
             //var filePath = Path.Combine("wwwroot", bulunanProgramci.ImageUrl);

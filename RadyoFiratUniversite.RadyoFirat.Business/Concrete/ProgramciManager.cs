@@ -32,6 +32,8 @@ namespace RadyoFiratUniversite.RadyoFirat.Business.Concrete
             return _programciDal.GetList().OrderByDescending(x => x.CreatedDate).ToList();
         }
 
+     
+
         public void Add(Programci programci)
         {
             programci.CreatedDate=DateTime.Now;
@@ -46,6 +48,7 @@ namespace RadyoFiratUniversite.RadyoFirat.Business.Concrete
 
         public void Delete(int programciId)
         {
+            
             _programciDal.Delete(new Programci(){Id = programciId});
         }
     }

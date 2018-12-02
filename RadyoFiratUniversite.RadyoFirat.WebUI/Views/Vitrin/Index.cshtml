@@ -16,6 +16,9 @@
         <th>Id</th>
         <th>Oluşturulma Tarihi</th>
         <th>Resim</th>
+        <th>Birinci Kelime</th>
+        <th>İkinci Kelime</th>
+        <th>Üçüncü Kelime</th>
         <th>İşlemler</th>
     </tr>
     </thead>
@@ -24,7 +27,10 @@
         <tr>
             <td>@item.Id</td>
             <td>@item.CreatedDate</td>
-            <td><img src="@item.ImageUrl"  width="50" height="50"/></td>
+            <td><img src="@item.ImageUrl" width="50" height="50" /></td>
+            <td>@item.BirinciKelime</td>
+            <td>@item.IkinciKelime</td>
+            <td>@item.UcuncuKelime</td>
             <td>
                 @Html.ActionLink("Düzenle", "Edit", new { id = item.Id }) |
                 @Html.ActionLink("Sil", "Delete", new { id = item.Id })

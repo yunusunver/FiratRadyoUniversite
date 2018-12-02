@@ -8,5 +8,6 @@ namespace RadyoFiratUniversite.RadyoFirat.DataAccess.Abstract
 {
     public interface IProgramciDal:IEntityRepository<Programci>
     {
+        
     }
 }
