@@ -1,4 +1,5 @@
-﻿<!doctype html>
+﻿@using Microsoft.AspNetCore.Http
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -43,16 +44,23 @@
                 </a>
             </div>
             <ul class="nav">
+               
                 <li class="active">
-                    <a href="/Programci/Index">
-                        <i class="ti-panel"></i>
-                        <p>Yayıncılar</p>
+                    <a href="/Admin/Edit">
+                        <i class="ti-user"></i>
+                        <p>Admin Profil</p>
                     </a>
                 </li>
                 <li>
-                    <a href="user.html">
-                        <i class="ti-user"></i>
-                        <p>User Profile</p>
+                    <a href="/Kurumsal/Index">
+                        <i class="ti-panel"></i>
+                        <p>Kurumsal</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Programci/Index">
+                        <i class="ti-panel"></i>
+                        <p>Yayıncılar</p>
                     </a>
                 </li>
                 <li>
@@ -120,7 +128,8 @@
                             <ul class="dropdown-menu">
                                 <li><a href="#">Radyo Fırat 89.2</a></li>
                                 <li><a href="#">Profile</a></li>
-                                <li><a href="#">Çıkış</a></li>
+                                <li><a href="#">@Context.Session.GetString("kullaniciAdi")</a></li>
+                                <li>@Html.ActionLink("Çıkış", "Logout", "Admin")</li>
                             </ul>
                         </li>
                       

@@ -16,7 +16,7 @@ namespace RadyoFiratUniversite.RadyoFirat.Business.Concrete
         {
             _yayinDal = yayinDal;
         }
-
+        
         public List<Yayin> GetAll()
         {
             return _yayinDal.GetListProgramci();

@@ -2,13 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using RadyoFiratUniversite.RadyoFirat.Business.Abstract;
 using RadyoFiratUniversite.RadyoFirat.Entities.Concrete;
+using RadyoFiratUniversite.RadyoFirat.WebUI.Filters;
 using RadyoFiratUniversite.RadyoFirat.WebUI.Models;
 
 namespace RadyoFiratUniversite.RadyoFirat.WebUI.Controllers
 {
+    [AuthFilter]
     public class IletisimController : Controller
     {
         private IIletisimService _iletisimService;
@@ -17,7 +20,7 @@ namespace RadyoFiratUniversite.RadyoFirat.WebUI.Controllers
         {
             _iletisimService = iletisimService;
         }
-
+        
         public ActionResult Index()
         {
             var iletisim = _iletisimService.GetAll();

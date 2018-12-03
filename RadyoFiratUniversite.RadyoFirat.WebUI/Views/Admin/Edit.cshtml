@@ -1,0 +1,71 @@
+﻿@model RadyoFiratUniversite.RadyoFirat.Entities.Concrete.Admin
+@{
+    Layout = "~/Views/_LayoutAdmin.cshtml";
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+          
+            <div class="col-lg-8 col-md-7">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">Profili Düzenle</h4>
+                    </div>
+                @using (Html.BeginForm(Html.BeginForm("Edit", "Admin")))
+                {
+                    <div class="content">
+                        <form>
+                            <div class="row">
+                              
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label>Username</label>
+                                        @Html.EditorFor(model => model.KullaniciAdi, new { htmlAttributes = new { @class = "form-control border-input"} })
+                                        @Html.ValidationMessageFor(model => model.KullaniciAdi, "", new { @class = "text-danger" })
+                                        
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Email</label>
+                                        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control border-input",@type="email"} })
+                                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Ad ve Soyad</label>
+                                        @Html.EditorFor(model => model.AdSoyad, new { htmlAttributes = new { @class = "form-control border-input"} })
+                                        @Html.ValidationMessageFor(model => model.AdSoyad, "", new { @class = "text-danger" })
+                                        
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Şifre</label>
+                                        @Html.EditorFor(model => model.Sifre, new { htmlAttributes = new { @class = "form-control border-input",@type="password"} })
+                                        @Html.ValidationMessageFor(model => model.Sifre, "", new { @class = "text-danger" })
+                                       
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-info btn-fill btn-wd">Profili Güncelle</button>
+                            </div>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                }
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

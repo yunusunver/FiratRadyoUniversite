@@ -10,6 +10,7 @@ using RadyoFiratUniversite.RadyoFirat.Business.Abstract;
 using RadyoFiratUniversite.RadyoFirat.Business.Concrete;
 using RadyoFiratUniversite.RadyoFirat.DataAccess.Abstract;
 using RadyoFiratUniversite.RadyoFirat.DataAccess.Concrete;
+using Microsoft.AspNetCore.Session;
 
 namespace RadyoFiratUniversite.RadyoFirat.WebUI
 {
@@ -27,6 +28,7 @@ namespace RadyoFiratUniversite.RadyoFirat.WebUI
             services.AddScoped<IVitrinDal, EfVitrinDal>();
             services.AddScoped<IYayinDal, EfYayinDal>();
             services.AddScoped<ITop30Dal, EfTop30Dal>();
+            services.AddScoped<IAdminDal, EfAdminDal>();
 
             services.AddScoped<IIletisimService, IletisimManager>();
             services.AddScoped<IKunyeService, KunyeManager>();
@@ -36,10 +38,12 @@ namespace RadyoFiratUniversite.RadyoFirat.WebUI
             services.AddScoped<IVitrinService, VitrinManager>();
             services.AddScoped<IYayinService, YayinManager>();
             services.AddScoped<ITop30Service, Top30Manager>();
-
+            services.AddScoped<IAdminService, AdminManager>();
 
            
             services.AddMvc();
+            services.AddDistributedMemoryCache();
+            services.AddSession();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -50,6 +54,7 @@ namespace RadyoFiratUniversite.RadyoFirat.WebUI
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseSession();
             app.UseStaticFiles();
             app.UseMvcWithDefaultRoute();
         }

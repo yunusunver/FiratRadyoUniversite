@@ -16,7 +16,11 @@ namespace RadyoFiratUniversite.RadyoFirat.Business.Concrete
             _kurumsalDal = kurumsalDal;
         }
 
-       
+
+        public Kurumsal Get(int id)
+        {
+            return _kurumsalDal.Get(x => x.Id == id);
+        }
 
         public List<Kurumsal> GetAll()
         {
@@ -25,6 +29,7 @@ namespace RadyoFiratUniversite.RadyoFirat.Business.Concrete
 
         public void Add(Kurumsal kurumsal)
         {
+            kurumsal.CreatedDate=DateTime.Now;
             _kurumsalDal.Add(kurumsal);
         }
 

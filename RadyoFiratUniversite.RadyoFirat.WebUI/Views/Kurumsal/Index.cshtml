@@ -1,5 +1,38 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model RadyoFiratUniversite.RadyoFirat.WebUI.Models.KurumsalListViewModel
+
 @{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/_LayoutAdmin.cshtml";
 }
+<h2>Görev Tanımları</h2>
+
+<p>
+    @Html.ActionLink("Yeni Yazı Oluştur", "Create", new {/* id=item.PrimaryKey */})
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Baslik</th>
+            <th>Oluşturulma Tarihi</th>
+            <th>Tanım</th>
+            <th>İşlemler</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Kurumsals)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Baslik</td>
+                <td>@item.CreatedDate</td>
+                <td>@item.Tanim</td>
+                <td>
+                    @Html.ActionLink("Düzenle", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Sil", "Delete", new { id = item.Id })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

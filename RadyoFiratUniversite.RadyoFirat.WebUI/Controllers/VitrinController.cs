@@ -8,10 +8,12 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using RadyoFiratUniversite.RadyoFirat.Business.Abstract;
 using RadyoFiratUniversite.RadyoFirat.Entities.Concrete;
+using RadyoFiratUniversite.RadyoFirat.WebUI.Filters;
 using RadyoFiratUniversite.RadyoFirat.WebUI.Models;
 
 namespace RadyoFiratUniversite.RadyoFirat.WebUI.Controllers
 {
+    [AuthFilter]
     public class VitrinController : Controller
     {
         private IVitrinService _vitrinService;

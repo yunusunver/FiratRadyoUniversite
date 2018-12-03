@@ -6,10 +6,12 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using RadyoFiratUniversite.RadyoFirat.Business.Abstract;
 using RadyoFiratUniversite.RadyoFirat.Entities.Concrete;
+using RadyoFiratUniversite.RadyoFirat.WebUI.Filters;
 using RadyoFiratUniversite.RadyoFirat.WebUI.Models;
 
 namespace RadyoFiratUniversite.RadyoFirat.WebUI.Controllers
 {
+    [AuthFilter]
     public class KunyeController : Controller
     {
         private IKunyeService _kunyeService;

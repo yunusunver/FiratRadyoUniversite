@@ -5,10 +5,12 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using RadyoFiratUniversite.RadyoFirat.Business.Abstract;
+using RadyoFiratUniversite.RadyoFirat.WebUI.Filters;
 using RadyoFiratUniversite.RadyoFirat.WebUI.Models;
 
 namespace RadyoFiratUniversite.RadyoFirat.WebUI.Controllers
 {
+    [AuthFilter]
     public class YayinController : Controller
     {
         private IYayinService _yayinService;

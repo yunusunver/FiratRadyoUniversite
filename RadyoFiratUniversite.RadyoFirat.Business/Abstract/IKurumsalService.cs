@@ -7,7 +7,7 @@ namespace RadyoFiratUniversite.RadyoFirat.Business.Abstract
 {
     public interface IKurumsalService
     {
-        
+        Kurumsal Get(int id);
         List<Kurumsal> GetAll();
         void Add(Kurumsal kurumsal);
         void Update(Kurumsal kurumsal);

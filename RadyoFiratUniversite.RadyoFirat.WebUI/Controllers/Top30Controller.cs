@@ -5,10 +5,12 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using RadyoFiratUniversite.RadyoFirat.Business.Abstract;
 using RadyoFiratUniversite.RadyoFirat.Entities.Concrete;
+using RadyoFiratUniversite.RadyoFirat.WebUI.Filters;
 using RadyoFiratUniversite.RadyoFirat.WebUI.Models;
 
 namespace RadyoFiratUniversite.RadyoFirat.WebUI.Controllers
 {
+    [AuthFilter]
     public class Top30Controller : Controller
     {
         private ITop30Service _top30Service;
