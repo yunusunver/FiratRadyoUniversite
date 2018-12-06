@@ -261,16 +261,20 @@
                 <div class="title2 animated" data-animation="fadeInUp" data-animation-delay="200">
                     HAKKIMIZDA
                 </div>
-
+            @foreach (var item in Model.Kurumsals)
+            {
                 <div class="title3 animated" data-animation="fadeInUp" data-animation-delay="300">
-                    Doğuş Grubu’nun ulaştığı başarının arkasında, müşteri odaklı ve verimliliği merkez alan bir yönetim yaklaşımı yer alıyor. Bu yaklaşımın bir sonucu olarak, Grup dünya ölçeğinde saygın markalarla yaptığı iş birlikleriyle, Türkiye’yi bütün dünyada temsil ediyor. Doğuş Grubu’nun, otomotivde Volkswagen AG ve TÜVSÜD, medyada Condé Nast (Vogue, GQ, Traveller), turizmde Hyatt International Ltd, marinacılıkta Latsis Grubu, Kiriacoulis Grubu ve Adriatic Croatia International (ACI) Grubu’nun yanı sıra yeme-içme ve eğlence sektöründe de bünyesinde Coya, Roka, Zuma ve Oblix gibi markaları bulunduran uluslararası Azumi Grubu ve e-ticaret alanında Güney Koreli SK Group gibi büyük küresel oyuncularla iş birlikleri ve ortaklıkları bulunuyor.
-                </div>
 
+
+                    @item.Tanim
+
+                </div>
+            }
                 <br><br>
 
                 <div class="row">
                     <div class="col-sm-9 animated" data-animation="fadeInLeft" data-animation-delay="100">
-                        <img src="images/best0.png" alt="" class="img-responsive">
+                        <img src="images/radyo-firattop30.png" alt="" class="img-responsive">
                     </div>
                     <div class="col-sm-3 animated" data-animation="fadeInRight" data-animation-delay="200">
 
@@ -298,62 +302,39 @@
         <div id="collection2">
             <div class="container">
 
-                <div class="title1 animated" data-animation="fadeInUp" data-animation-delay="100">
-                    Listen it from
-                    www.Yoursite.com
-                </div>
+              
 
                 <div class="title2 animated" data-animation="fadeInUp" data-animation-delay="200">
-                    ABOUT OUR RADIO STATION
+                    RADYO YAYINLARIMIZ
                 </div>
 
-                <div class="title3 animated" data-animation="fadeInUp" data-animation-delay="300">
-                    Lorem ipsum dolor sit amet
-                    concateur non tropp sit namo, allegro sustenuto al prada bravo pensare, chicco milo naturo<br>el spresso
-                    concateur non value maro noro strata. notn troppo.
-                </div>
+          
 
                 <br><br>
 
                 <div class="row">
-                    <div class="col-sm-6">
-                        <div class="thumb7 animated" data-animation="fadeInUp" data-animation-delay="200">
-                            <div class="thumbnail clearfix">
-                                <figure class="">
-                                    <img src="images/style010.jpg" alt="" class="img-responsive">
-                                </figure>
-                                <div class="caption">
-                                    <div class="title">Lorem Ipsum Dolor</div>
-                                    <p>
-                                        Etiam pharetra ut ante eget efficitur. Nullam quis felis at nunc vehicula
-                                        sollicitudin ut ex. Maecenas eget volutpat turpis. Praesent dapibus eleifend augue,
-                                        eget sollicitudin velit malesuada eu. Aliquam blandit, diam ac venenatis feugiat,
-                                        tellus odio malesuada ex, eu luctus lectus nibh et velit.
-                                    </p>
-                                    <a href="#" class="btn-default btn5">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="thumb7 animated" data-animation="fadeInUp" data-animation-delay="300">
-                            <div class="thumbnail clearfix">
-                                <figure class="">
-                                    <img src="images/style009.jpg" alt="" class="img-responsive">
-                                </figure>
-                                <div class="caption">
-                                    <div class="title">Best Music Online</div>
-                                    <p>
-                                        Etiam pharetra ut ante eget efficitur. Nullam quis felis at nunc vehicula
-                                        sollicitudin ut ex. Maecenas eget volutpat turpis. Praesent dapibus eleifend augue,
-                                        eget sollicitudin velit malesuada eu. Aliquam blandit, diam ac venenatis feugiat,
-                                        tellus odio malesuada ex, eu luctus lectus nibh et velit.
-                                    </p>
-                                    <a href="#" class="btn-default btn5">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                 @foreach (var item in Model.Yayins)
+                 {
+                     <div class="col-sm-6">
+                         <div class="thumb7 animated" data-animation="fadeInUp" data-animation-delay="200">
+                             <div class="thumbnail clearfix">
+                                 <figure class="">
+                                     <img src="images/style010.jpg" alt="" class="img-responsive">
+                                 </figure>
+                                 <div class="caption">
+                                     <div class="title">@item.YayinAdi</div>
+                                     <p>
+                                         @item.Tanim
+                                     </p>
+                                     <a href="#" class="btn-default btn5"> SAAT @item.BaslangicSaati - @item.BitisSaati</a>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                 }
+
+
+
                 </div>
 
 
@@ -479,48 +460,28 @@
                     </div>
                     <div class="col-sm-4 col-sm-offset-1">
 
-                        <div class="bot1_title">LATEST NEWS</div>
+                        <div class="bot1_title">İLETİŞİM KANALLARI</div>
 
-                        <div class="latest1">
-                            <a href="#" class="clearfix">
-                                <figure><img src="images/latest01.jpg" alt=""></figure>
-                                <div class="caption">
-                                    <div class="txt1">
-                                        Lorem ipsum dolor sit amet, concateur un otto bravo netto, sustenuto
-                                        non troppo.
-                                    </div>
-                                    <div class="txt2">January 17 - 2016</div>
-                                </div>
-                            </a>
-                        </div>
+                     @foreach (var item in Model.Iletisims)
+                     {
+                         <div class="latest1">
+                             <a href="#" class="clearfix">
+                                 
+                                 <div class="caption">
+                                     <div class="txt1">
+                                         <b>@item.Ozellik</b> 
+                                     </div>
+                                     <div class="txt2">@item.Deger</div>
+                                 </div>
+                             </a>
+                         </div>
+                     }
 
-                        <div class="latest1">
-                            <a href="#" class="clearfix">
-                                <figure><img src="images/latest02.jpg" alt=""></figure>
-                                <div class="caption">
-                                    <div class="txt1">
-                                        Lorem ipsum dolor sit amet, concateur un otto bravo netto, sustenuto
-                                        non troppo.
-                                    </div>
-                                    <div class="txt2">February 11 - 2016</div>
-                                </div>
-                            </a>
-                        </div>
+                     
 
-                        <div class="latest1 last">
-                            <a href="#" class="clearfix">
-                                <figure><img src="images/latest03.jpg" alt=""></figure>
-                                <div class="caption">
-                                    <div class="txt1">
-                                        Lorem ipsum dolor sit amet, concateur un otto bravo netto, sustenuto
-                                        non troppo.
-                                    </div>
-                                    <div class="txt2">March 21 - 2016</div>
-                                </div>
-                            </a>
-                        </div>
+                    
 
-                        <a href="#" class="btn-default btn3">READ MORE</a>
+                       
 
                     </div>
                 </div>

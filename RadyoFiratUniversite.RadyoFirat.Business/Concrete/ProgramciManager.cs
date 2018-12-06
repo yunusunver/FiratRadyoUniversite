@@ -11,10 +11,12 @@ namespace RadyoFiratUniversite.RadyoFirat.Business.Concrete
     public class ProgramciManager:IProgramciService
     {
         private IProgramciDal _programciDal;
+        private IYayinDal _yayinDal;
 
-        public ProgramciManager(IProgramciDal programciDal)
+        public ProgramciManager(IProgramciDal programciDal,IYayinDal yayinDal)
         {
             _programciDal = programciDal;
+            _yayinDal = yayinDal;
         }
 
         public Programci Get(int id)
@@ -48,7 +50,15 @@ namespace RadyoFiratUniversite.RadyoFirat.Business.Concrete
 
         public void Delete(int programciId)
         {
-            
+            var bulunanYayin = _yayinDal.GetList(x => x.ProgramciId == programciId).ToList();
+
+            if (bulunanYayin!=null)
+            {
+                foreach (var item in bulunanYayin)
+                {
+                    _yayinDal.Delete(item);
+                }
+            }
             _programciDal.Delete(new Programci(){Id = programciId});
         }
     }

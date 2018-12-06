@@ -4,11 +4,11 @@
     Layout = "~/Views/_LayoutAdmin.cshtml";
 }
 
-@using (Html.BeginForm(Html.BeginForm("Create", "Yayin")))
+@using (Html.BeginForm(Html.BeginForm("Edit", "Yayin")))
 {
     <div class="form-horizontal">
-        <h3 class="sign-h text-danger">Yayın Ekle</h3>
-      
+        <h3 class="sign-h text-danger">Yayın Düzenle</h3>
+
 
         <div class="form-group">
             @Html.LabelFor(model => model.YayinAdi, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -26,15 +26,15 @@
                 @Html.ValidationMessageFor(model => model.Tanim, "", new { @class = "text-danger" })
             </div>
         </div>
-        
+
         <div class="form-group">
             @Html.LabelFor(model => model.Gun, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Gun, new { htmlAttributes = new { @class = "form-control"} })
+                @Html.EditorFor(model => model.Gun, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Gun, "", new { @class = "text-danger" })
             </div>
         </div>
-        
+
         <div class="form-group">
             @Html.LabelFor(model => model.BaslangicSaati, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -42,7 +42,7 @@
                 @Html.ValidationMessageFor(model => model.BaslangicSaati, "", new { @class = "text-danger" })
             </div>
         </div>
-        
+
         <div class="form-group">
             @Html.LabelFor(model => model.BitisSaati, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -50,11 +50,11 @@
                 @Html.ValidationMessageFor(model => model.BitisSaati, "", new { @class = "text-danger" })
             </div>
         </div>
-        
+
         <div class="form-group">
             @Html.LabelFor(model => model.ProgramciId, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownListFor(model => model.ProgramciId, (IEnumerable<SelectListItem>)ViewBag.Unvanlar, new { @class="form-control" })
+                @Html.DropDownListFor(model => model.ProgramciId, (IEnumerable<SelectListItem>)ViewBag.Unvanlar, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.ProgramciId, "", new { @class = "text-danger" })
             </div>
         </div>

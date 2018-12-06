@@ -9,7 +9,7 @@ namespace RadyoFiratUniversite.RadyoFirat.Business.Abstract
     {
         List<Yayin> GetAll();
         List<Yayin> GetListBySaati(string baslangicSaati);
-        
+        Yayin Get(int id);
         void Add(Yayin yayin);
         void Update(Yayin yayin);
         void Delete(int yayinId);

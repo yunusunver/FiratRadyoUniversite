@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using RadyoFiratUniversite.RadyoFirat.Business.Abstract;
 using RadyoFiratUniversite.RadyoFirat.DataAccess.Abstract;
@@ -25,6 +26,11 @@ namespace RadyoFiratUniversite.RadyoFirat.Business.Concrete
         public List<Yayin> GetListBySaati(string baslangicSaati)
         {
             return _yayinDal.GetList().OrderByDescending(x=>x.BaslangicSaati).ToList();
+        }
+
+        public Yayin Get(int id)
+        {
+            return _yayinDal.Get(x => x.Id == id);
         }
 
         

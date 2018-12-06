@@ -7,6 +7,7 @@ using RadyoFiratUniversite.RadyoFirat.Entities.Concrete;
 
 namespace RadyoFiratUniversite.RadyoFirat.Business.Concrete
 {
+    
     public class KurumsalManager:IKurumsalService
     {
         private IKurumsalDal _kurumsalDal;
