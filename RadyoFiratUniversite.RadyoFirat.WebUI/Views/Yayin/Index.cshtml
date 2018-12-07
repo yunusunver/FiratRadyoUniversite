@@ -12,18 +12,19 @@
 </p>
 <table class="table">
     <thead>
-    <tr>
-        <th>Id</th>
-        <th>Yayın Adı</th>
-        <th>Açıklama</th>
-        <th>Gün</th>
-        <th>Başlangıç Saati</th>
-        <th>Bitiş Saati</th>
-        <th>Yayıncı</th>
-        <th>Resim</th>
-        <th>İşlemler</th>
-        
-    </tr>
+        <tr>
+            <th>Id</th>
+            <th>Yayın Adı</th>
+            <th>Açıklama</th>
+            <th>Gün</th>
+            <th>Başlangıç Saati</th>
+            <th>Bitiş Saati</th>
+            <th>Yayıncı</th>
+            <th>Resim</th>
+            <th>Saat</th>
+            <th>İşlemler</th>
+
+        </tr>
     </thead>
     <tbody>
     @foreach (var item in Model.Yayinlar) {
@@ -36,6 +37,7 @@
             <td>@item.BitisSaati</td>
             <td>@item.Programci.AdSoyad</td>
             <td><img src="@item.ImageUrl" width="50" height="50" /></td>
+            <td>@item.YayinTarihi</td>
 
 
             <td>

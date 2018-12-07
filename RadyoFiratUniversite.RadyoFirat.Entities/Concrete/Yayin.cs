@@ -19,6 +19,7 @@ namespace RadyoFiratUniversite.RadyoFirat.Entities.Concrete
         [ForeignKey("Programci")]
         public int ProgramciId { get; set; }
         public string ImageUrl { get; set; }
+        public Nullable<DateTime> YayinTarihi { get; set; }
 
         public virtual Programci Programci { get; set; }
         

@@ -9,5 +9,6 @@ namespace RadyoFiratUniversite.RadyoFirat.WebUI.Models
     public class YayinListViewModel
     {
         public List<Yayin> Yayinlar { get; internal set; }
+        public  List<Iletisim> Iletisim { get; internal set; }
     }
 }

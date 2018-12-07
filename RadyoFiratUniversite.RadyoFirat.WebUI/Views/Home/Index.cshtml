@@ -14,6 +14,7 @@
     <meta name="description" content="Your description">
     <meta name="keywords" content="Your keywords">
     <meta name="author" content="Your name">
+
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/font-awesome.css" rel="stylesheet">
     <link href="css/camera.css" rel="stylesheet">
@@ -132,21 +133,22 @@
                                             <a href="#home">ANASAYFA</a>
 
                                         </li>
-                                     
-                                       
+
+
                                         <li class="sub-menu sub-menu-1">
                                             <a href="javascript:void(0);">KURUMSAL<em></em></a>
                                             <ul>
                                                 <li><a href="#collection">HAKKIMIZDA</a></li>
                                                 <li><a href="#yonetim">YÖNETİM</a></li>
-                                               
 
-                                              
+
+
                                             </ul>
                                         </li>
-                                        <li><a href="#featured">YAYINCILARIMIZ</a></li>
-                                        <li><a href="#top30">Top 30</a></li>
-                                       
+                                        <li><a href="#programlar">PROGRAMLAR</a></li>
+                                        <li><a href="#top30liste">Top 30</a></li>
+                                        <li>@Html.ActionLink("YAYIN AKIŞI","Index","Yayinakisi")</li>
+
                                         <li><a href="#contacts">İLETİŞİM</a></li>
                                     </ul>
                                 </div>
@@ -164,14 +166,14 @@
         <div id="featured">
             <div class="container">
 
-                <div class="title1 animated" data-animation="fadeInUp" data-animation-delay="100">
+                <div class="title1 animated" data-animation="fadeInUp" data-animation-delay="100" id="programlar">
                     Fırat Radyo
                     FM - <b>89.2</b>
                 </div>
 
                 <div class="kand1 animated" data-animation="fadeInUp" data-animation-delay="200"></div>
 
-                <div class="title2 animated" data-animation="fadeInUp" data-animation-delay="300">YAYINCILARIMIZ</div>
+                <div class="title2 animated" data-animation="fadeInUp" data-animation-delay="300">PROGRAMLAR</div>
 
 
 
@@ -183,15 +185,18 @@
                     <div class="slick-slider slider center">
                         
                         
-                        @foreach (var item in Model.Programcis)
+                        @foreach (var item in Model.Yayins)
                         {
                             <div>
                                 <div class="slick-slider-inner">
-                                    <figure><img src="@item.ImageUrl" alt="" class="img-responsive"></figure>
+                                    <figure><img src="@item.ImageUrl" alt="" class="img-responsive" style="height: 200px;width: 525px"></figure>
                                     <div class="caption">
-                                        <div class="txt1"><span>Müzik - Radyo  </span></div>
-                                        <div class="txt2"><span>@item.AdSoyad</span></div>
-                                        
+                                        <div class="txt4"><span>@item.YayinAdi </span></div>
+                                        <div class="txt2"><span>@item.BaslangicSaati-@item.BitisSaati</span></div>
+                                        <div class="txt3"><span>@item.Gun </span></div>
+                                        <div class="txt3"><span>@String.Format("{0:t}", item.YayinTarihi) </span></div>
+
+
                                     </div>
                                     <div class="slick-slider-overlay"></div>
                                 </div>
@@ -205,50 +210,7 @@
             </div>
 
 
-            <div class="container" id="top30">
-
-                <div class="title2 animated" data-animation="fadeInUp" data-animation-delay="100">
-                    TOP 30
-                </div>
-
-               
-
-                <br><br><br>
-
-                <div class="radios animated" data-animation="fadeInUp" data-animation-delay="300">
-                    <div class="radio1 head clearfix">
-                        <div class="sec1">Top Sırası</div>
-                        <div class="sec2"></div>
-                        <div class="sec3">Sanatçı</div>
-                        <div class="sec4"> </div>
-                        <div class="sec5">Şarkı </div>
-                        <div class="sec6"> </div>
-
-                        <div class="sec7">Dinle</div>
-                    </div>
-                @foreach (var item in Model.Top30)
-                {
-                    <div class="radio1 clearfix">
-                        <div class="sec1">@item.TopSirasi</div>
-                        <div class="sec2"></div>
-                        <div class="sec3">@item.SanatciAdi</div>
-                        <div class="sec4"> </div>
-                        <div class="sec5">@item.SarkiAdi </div>
-                        <div class="sec6"> </div>
-
-                        <div class="sec7"> 89.2</div>
-
-                    </div>
-                }
-
-
-
-
-                </div>
-
-            
-
-            </div>
+     
 
 
         </div>
@@ -276,7 +238,7 @@
                     <div class="col-sm-9 animated" data-animation="fadeInLeft" data-animation-delay="100">
                         <img src="images/radyo-firattop30.png" alt="" class="img-responsive">
                     </div>
-                    <div class="col-sm-3 animated" data-animation="fadeInRight" data-animation-delay="200">
+                    <div class="col-sm-3 animated" data-animation="fadeInRight" data-animation-delay="200" id="top30liste">
 
                         <div class="best0">
                             <div class="txt1">Fırat Radyo Top 30 Listesi</div>
@@ -305,7 +267,7 @@
               
 
                 <div class="title2 animated" data-animation="fadeInUp" data-animation-delay="200">
-                    RADYO YAYINLARIMIZ
+                    RADYO YAYINCILARIMIZ
                 </div>
 
           
@@ -313,20 +275,18 @@
                 <br><br>
 
                 <div class="row">
-                 @foreach (var item in Model.Yayins)
+                 @foreach (var item in Model.Programcis)
                  {
-                     <div class="col-sm-6">
+                     <div class="col-sm-2">
                          <div class="thumb7 animated" data-animation="fadeInUp" data-animation-delay="200">
                              <div class="thumbnail clearfix">
                                  <figure class="">
-                                     <img src="images/style010.jpg" alt="" class="img-responsive">
+                                     <img src="@item.ImageUrl" alt="" class="img-responsive" style="height: 100px; width:100px">
                                  </figure>
                                  <div class="caption">
-                                     <div class="title">@item.YayinAdi</div>
-                                     <p>
-                                         @item.Tanim
-                                     </p>
-                                     <a href="#" class="btn-default btn5"> SAAT @item.BaslangicSaati - @item.BitisSaati</a>
+                                     <div class="title">@item.AdSoyad</div>
+                                    
+                                    
                                  </div>
                              </div>
                          </div>

@@ -1,0 +1,515 @@
+﻿@model RadyoFiratUniversite.RadyoFirat.WebUI.Models.YayinListViewModel
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Artists</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Your description">
+    <meta name="keywords" content="Your keywords">
+    <meta name="author" content="Your name">
+
+    <link href="/Content/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/font-awesome.css" rel="stylesheet">
+    <link href="//camera.css" rel="stylesheet">
+    <link href="/css/mediaelementplayer.css" rel="stylesheet">
+    <link href="/css/slick.css" rel="stylesheet">
+    <link href="/css/slick-theme.css" rel="stylesheet">
+    <link href="/css/animate.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+
+
+
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 300;
+        }
+
+        .tabs {
+            max-width: 640px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        #tab-button {
+            display: table;
+            table-layout: fixed;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+            #tab-button li {
+                display: table-cell;
+                width: 20%;
+            }
+
+                #tab-button li a {
+                    display: block;
+                    padding: .5em;
+                    background: #eee;
+                    border: 1px solid #ddd;
+                    text-align: center;
+                    color: #000;
+                    text-decoration: none;
+                }
+
+                #tab-button li:not(:first-child) a {
+                    border-left: none;
+                }
+
+                #tab-button li a:hover,
+                #tab-button .is-active a {
+                    border-bottom-color: transparent;
+                    background: #fff;
+                }
+
+        .tab-contents {
+            padding: .5em 2em 1em;
+            border: 1px solid #ddd;
+        }
+
+
+
+        .tab-button-outer {
+            display: none;
+        }
+
+        .tab-contents {
+            margin-top: 20px;
+        }
+
+        @@media screen and (min-width: 768px) {
+            .tab-button-outer {
+                position: relative;
+                z-index: 2;
+                display: block;
+            }
+
+            .tab-select-outer {
+                display: none;
+            }
+
+            .tab-contents {
+                position: relative;
+                top: -1px;
+                margin-top: 0;
+            }
+        }
+    </style>
+
+
+</head>
+<body class="not-front">
+
+    <div id="main">
+
+        <div id="top1">
+            <div class="top2_wrapper" id="top2">
+                <div class="container">
+
+                    <div class="top2 clearfix">
+
+                        <header>
+                            <div class="logo_wrapper">
+                                <a href="index-2.html" class="logo scroll-to">
+                                    <img src="/images/radyoFırat.png" alt="" class="img-responsive">
+                                </a>
+                            </div>
+                        </header>
+
+                        <div class="menu_wrapper">
+
+                            <div class="navbar navbar_ navbar-default">
+                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                                        data-target=".navbar-collapse">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                                <div class="navbar-collapse navbar-collapse_ collapse">
+                                    <ul class="nav navbar-nav sf-menu clearfix">
+                                        <li>
+
+                                            @Html.ActionLink("ANASAYFA", "Index", "Home")
+
+                                        </li>
+
+                                        <li><a href="#yayinAkisi">YAYIN AKIŞI</a></li>
+
+                                        <li><a href="#contacts">İLETİŞİM</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+        <div id="content">
+            <div class="container">
+
+
+                <div class="title2 animated" data-animation="fadeInUp" data-animation-delay="200">Yayın Akışı</div>
+
+
+                <br><br><br>
+
+                <div class="row">
+                    <br /><br />
+                    <div class="tabs" id="yayinAkisi">
+                        <div class="tab-button-outer">
+                            <ul id="tab-button">
+                                <li><a href="#tab01">Pazartesi</a></li>
+                                <li><a href="#tab02">Salı</a></li>
+                                <li><a href="#tab03">Çarşamba</a></li>
+                                <li><a href="#tab04">Perşembe</a></li>
+                                <li><a href="#tab05">Cuma</a></li>
+                                <li><a href="#tab06">Cumartesi</a></li>
+                                <li><a href="#tab07">Pazar</a></li>
+
+                            </ul>
+                        </div>
+                        <div class="tab-select-outer">
+                            <select id="tab-select">
+                                <option value="#tab01">Pazartesi</option>
+                                <option value="#tab02">Salı</option>
+                                <option value="#tab03">Çarşamba</option>
+                                <option value="#tab04">Perşembe</option>
+                                <option value="#tab05">Cuma</option>
+                                <option value="#tab05">Cumartesi</option>
+                                <option value="#tab05">Pazar</option>
+                            </select>
+                        </div>
+
+                        <div id="tab01" class="tab-contents">
+
+                            <table class="table table-dark">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Saat</th>
+                                        <th scope="col">Yayın</th>
+                                        <th scope="col">Yayıncı</th>
+                                        <th scope="col"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model.Yayinlar.Where(x => x.Gun == "Pazartesi").OrderBy(x => x.YayinTarihi))
+                                    {
+                                        <tr>
+                                            <th scope="row">@String.Format("{0:t}", item.YayinTarihi)</th>
+                                            <td>@item.YayinAdi</td>
+                                            <td>@item.Programci.AdSoyad</td>
+                                            <td><img src="@item.Programci.ImageUrl" alt="" class="img-responsive rounded-circle" style="height: 100px; width:100px"></td>
+                                        </tr>
+                                    }
+
+                                </tbody>
+                            </table>
+                        </div>
+                        <div id="tab02" class="tab-contents">
+
+                            <table class="table table-dark">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Saat</th>
+                                        <th scope="col">Yayın</th>
+                                        <th scope="col">Yayıncı</th>
+                                        <th scope="col"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                @foreach (var item in Model.Yayinlar.Where(x => x.Gun == "Salı").OrderBy(x => x.YayinTarihi))
+                                {
+                                    <tr>
+                                        <th scope="row">@String.Format("{0:t}", item.YayinTarihi)</th>
+                                        <td>@item.YayinAdi</td>
+                                        <td>@item.Programci.AdSoyad</td>
+                                        <td><img src="@item.Programci.ImageUrl" alt="" class="img-responsive rounded-circle" style="height: 100px; width:100px"></td>
+                                    </tr>
+                                }
+                                </tbody>
+                            </table>
+                        </div>
+                        <div id="tab03" class="tab-contents">
+
+                            <table class="table table-dark">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Saat</th>
+                                        <th scope="col">Yayın</th>
+                                        <th scope="col">Yayıncı</th>
+                                        <th scope="col"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                @foreach (var item in Model.Yayinlar.Where(x => x.Gun == "Çarşamba").OrderBy(x => x.YayinTarihi))
+                                {
+                                    <tr>
+                                        <th scope="row">@String.Format("{0:t}", item.YayinTarihi)</th>
+                                        <td>@item.YayinAdi</td>
+                                        <td>@item.Programci.AdSoyad</td>
+                                        <td><img src="@item.Programci.ImageUrl" alt="" class="img-responsive rounded-circle" style="height: 100px; width:100px"></td>
+                                    </tr>
+                                }
+                                </tbody>
+                            </table>
+                        </div>
+                        <div id="tab04" class="tab-contents">
+
+                            <table class="table table-dark">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Saat</th>
+                                        <th scope="col">Yayın</th>
+                                        <th scope="col">Yayıncı</th>
+                                        <th scope="col"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                @foreach (var item in Model.Yayinlar.Where(x => x.Gun == "Perşembe").OrderBy(x => x.YayinTarihi))
+                                {
+                                    <tr>
+                                        <th scope="row">@String.Format("{0:t}", item.YayinTarihi)</th>
+                                        <td>@item.YayinAdi</td>
+                                        <td>@item.Programci.AdSoyad</td>
+                                        <td><img src="@item.Programci.ImageUrl" alt="" class="img-responsive rounded-circle" style="height: 100px; width:100px"></td>
+                                    </tr>
+                                }
+                                </tbody>
+                            </table>
+                        </div>
+                        <div id="tab05" class="tab-contents">
+
+                            <table class="table table-dark">
+                                <thead>
+                                <tr>
+                                    <th scope="col">Saat</th>
+                                    <th scope="col">Yayın</th>
+                                    <th scope="col">Yayıncı</th>
+                                    <th scope="col"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                @foreach (var item in Model.Yayinlar.Where(x => x.Gun == "Cuma").OrderBy(x => x.YayinTarihi))
+                                {
+                                    <tr>
+                                        <th scope="row">@String.Format("{0:t}", item.YayinTarihi)</th>
+                                        <td>@item.YayinAdi</td>
+                                        <td>@item.Programci.AdSoyad</td>
+                                        <td><img src="@item.Programci.ImageUrl" alt="" class="img-responsive rounded-circle" style="height: 100px; width:100px"></td>
+                                    </tr>
+                                }
+                                </tbody>
+                            </table>
+                        </div>
+                        <div id="tab06" class="tab-contents">
+
+                            <table class="table table-dark">
+                                <thead>
+                                <tr>
+                                    <th scope="col">Saat</th>
+                                    <th scope="col">Yayın</th>
+                                    <th scope="col">Yayıncı</th>
+                                    <th scope="col"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                @foreach (var item in Model.Yayinlar.Where(x => x.Gun == "Cumartesi").OrderBy(x => x.YayinTarihi))
+                                {
+                                    <tr>
+                                        <th scope="row">@String.Format("{0:t}", item.YayinTarihi)</th>
+                                        <td>@item.YayinAdi</td>
+                                        <td>@item.Programci.AdSoyad</td>
+                                        <td><img src="@item.Programci.ImageUrl" alt="" class="img-responsive rounded-circle" style="height: 100px; width:100px"></td>
+                                    </tr>
+                                }
+                                </tbody>
+                            </table>
+                        </div>
+                        <div id="tab07" class="tab-contents">
+
+                            <table class="table table-dark">
+                                <thead>
+                                <tr>
+                                    <th scope="col">Saat</th>
+                                    <th scope="col">Yayın</th>
+                                    <th scope="col">Yayıncı</th>
+                                    <th scope="col"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                @foreach (var item in Model.Yayinlar.Where(x => x.Gun == "Pazar").OrderBy(x => x.YayinTarihi))
+                                {
+                                    <tr>
+                                        <th scope="row">@String.Format("{0:t}", item.YayinTarihi)</th>
+                                        <td>@item.YayinAdi</td>
+                                        <td>@item.Programci.AdSoyad</td>
+                                        <td><img src="@item.Programci.ImageUrl" alt="" class="img-responsive rounded-circle" style="height: 100px; width:100px"></td>
+                                    </tr>
+                                }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+
+    <div class="bot1_wrapper" id="contacts">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+
+                    <div class="logo2_wrapper">
+                        <a href="index-2.html" class="logo2">
+                            <img src="images/radyoFırat.png" alt="" class="img-responsive">
+                        </a>
+                    </div>
+
+                    <p>
+                        İletişim Adreslerimiz
+                    </p>
+
+                    <div class="location1">Fırat Üniversitesi Rektörlük Kampüsü Merkez/Elazığ <br>Türkiye</div>
+
+                    <div class="phone1">+90 424 237 91 40 (Tel)</div>
+
+                    <div class="mail1"><a href="#">bilgi@firatradyotv.com</a></div>
+
+                </div>
+                <div class="col-sm-3">
+
+
+                  
+
+                </div>
+                <div class="col-sm-4 col-sm-offset-1">
+
+                    <div class="bot1_title">İLETİŞİM KANALLARI</div>
+
+                    @foreach (var item in Model.Iletisim)
+                    {
+                        <div class="latest1">
+                            <a href="#" class="clearfix">
+                                 
+                                <div class="caption">
+                                    <div class="txt1">
+                                        <b>@item.Ozellik</b> 
+                                    </div>
+                                    <div class="txt2">@item.Deger</div>
+                                </div>
+                            </a>
+                        </div>
+                    }
+
+                     
+
+                    
+
+                       
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <div class="bot2_wrapper">
+            <div class="container">
+                   @Html.ActionLink("ADMİN", "Login", "Admin")
+            </div>
+        </div>
+
+
+    </div>
+    <script src="/js/jquery.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/jquery-migrate-1.2.1.min.js"></script>
+    <script src="/js/jquery.easing.1.3.js"></script>
+    <script src="/js/superfish.js"></script>
+
+    <script src="/js/camera.js"></script>
+
+    <script src="/js/mediaelement-and-player.js"></script>
+
+    <script src="/js/slick.min.js"></script>
+
+    <script src="/js/jquery.jrumble.1.3.min.js"></script>
+
+    <script src="/js/jquery.sticky.js"></script>
+
+    <script src="/js/jquery.queryloader2.js"></script>
+
+    <script src="/js/jquery.appear.js"></script>
+
+    <script src="/js/jquery.ui.totop.js"></script>
+    <script src="/js/jquery.equalheights.js"></script>
+
+    <script src="/js/jquery.caroufredsel.js"></script>
+    <script src="/js/jquery.touchSwipe.min.js"></script>
+
+    <script src="/js/SmoothScroll.js"></script>
+
+
+    <script src="/js/scripts.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            var $tabButtonItem = $('#tab-button li'),
+                $tabSelect = $('#tab-select'),
+                $tabContents = $('.tab-contents'),
+                activeClass = 'is-active';
+
+            $tabButtonItem.first().addClass(activeClass);
+            $tabContents.not(':first').hide();
+
+            $tabButtonItem.find('a').on('click', function (e) {
+                var target = $(this).attr('href');
+
+                $tabButtonItem.removeClass(activeClass);
+                $(this).parent().addClass(activeClass);
+                $tabSelect.val(target);
+                $tabContents.hide();
+                $(target).show();
+                e.preventDefault();
+            });
+
+            $tabSelect.on('change', function () {
+                var target = $(this).val(),
+                    targetSelectNum = $(this).prop('selectedIndex');
+
+                $tabButtonItem.removeClass(activeClass);
+                $tabButtonItem.eq(targetSelectNum).addClass(activeClass);
+                $tabContents.hide();
+                $(target).show();
+            });
+        });
+    </script>
+
+</body>
+
+
+
+
+<!-- Mirrored from demo.gridgum.com/templates/radio-fm/artists.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 29 Nov 2018 08:13:29 GMT -->
+</html>
+
