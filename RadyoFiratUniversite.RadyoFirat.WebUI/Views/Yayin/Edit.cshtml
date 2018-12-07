@@ -4,7 +4,7 @@
     Layout = "~/Views/_LayoutAdmin.cshtml";
 }
 
-@using (Html.BeginForm(Html.BeginForm("Edit", "Yayin")))
+@using (Html.BeginForm(Html.BeginForm("Edit", "Yayin", FormMethod.Post, new { enctype = "multipart/form-data" })))
 {
     <div class="form-horizontal">
         <h3 class="sign-h text-danger">Yayın Düzenle</h3>
@@ -58,7 +58,31 @@
                 @Html.ValidationMessageFor(model => model.ProgramciId, "", new { @class = "text-danger" })
             </div>
         </div>
+        
+        
+        <div class="form-group">
+            @Html.LabelFor(model => model.ImageUrl, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <img src="@Model.ImageUrl" height="100px" width="100px" />
+                @Html.ValidationMessageFor(model => model.ImageUrl, "", new { @class = "text-danger" })
+            </div>
+        </div>
 
+        <div class="form-group">
+            @Html.Label("Resim Ekle", "Resim Ekle", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input type="file" id="image" name="image" class="form-control" accept=".jpg,.png" />
+
+            </div>
+        </div>
+
+        <div class="form-group" style="display: none">
+            @Html.LabelFor(model => model.ImageUrl, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ImageUrl, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ImageUrl, "", new { @class = "text-danger" })
+            </div>
+        </div>
 
 
         <div class="form-group">

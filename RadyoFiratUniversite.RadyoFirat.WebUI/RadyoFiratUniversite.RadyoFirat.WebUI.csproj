@@ -38,6 +38,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="wwwroot\image\Yayincilar\" />
     <Folder Include="wwwroot\image\VitrinResimleri\" />
     <Folder Include="wwwroot\image\Programcilar\" />
   </ItemGroup>

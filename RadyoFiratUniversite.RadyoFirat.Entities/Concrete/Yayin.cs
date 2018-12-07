@@ -18,6 +18,7 @@ namespace RadyoFiratUniversite.RadyoFirat.Entities.Concrete
         public string Gun { get; set; }
         [ForeignKey("Programci")]
         public int ProgramciId { get; set; }
+        public string ImageUrl { get; set; }
 
         public virtual Programci Programci { get; set; }
         
