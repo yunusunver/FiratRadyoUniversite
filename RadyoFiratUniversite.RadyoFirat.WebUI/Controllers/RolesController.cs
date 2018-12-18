@@ -14,10 +14,12 @@ namespace RadyoFiratUniversite.RadyoFirat.WebUI.Controllers
     public class RolesController : Controller
     {
         private IRolesService _rolesService;
+      
 
         public RolesController(IRolesService rolesService)
         {
             _rolesService = rolesService;
+           
         }
 
         public ActionResult Index()
@@ -57,6 +59,7 @@ namespace RadyoFiratUniversite.RadyoFirat.WebUI.Controllers
 
         public ActionResult Delete(int id)
         {
+            
             _rolesService.Delete(id);
             return RedirectToAction("Index");
         }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using RadyoFiratUniversite.RadyoFirat.Business.Abstract;
 using RadyoFiratUniversite.RadyoFirat.DataAccess.Abstract;
@@ -10,10 +11,12 @@ namespace RadyoFiratUniversite.RadyoFirat.Business.Concrete
     public class RolesManager:IRolesService
     {
         private IRolesDal _rolesDal;
+        private IKunyeDal _kunyeDal;
 
-        public RolesManager(IRolesDal rolesDal)
+        public RolesManager(IRolesDal rolesDal,IKunyeDal kunyeDal)
         {
             _rolesDal = rolesDal;
+            _kunyeDal = kunyeDal;
         }
 
         public Roles Get(int id)
@@ -37,6 +40,14 @@ namespace RadyoFiratUniversite.RadyoFirat.Business.Concrete
 
         public void Delete(int rolesId)
         {
+            var bulunanKunye = _kunyeDal.GetList(x => x.RoleId == rolesId).ToList();
+            if (bulunanKunye != null)
+            {
+                foreach (var item in bulunanKunye)
+                {
+                    _kunyeDal.Delete(item);
+                }
+            }
             _rolesDal.Delete(new Roles(){Id = rolesId});
         }
     }

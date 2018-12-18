@@ -7,7 +7,9 @@
 
 <!-- Mirrored from demo.gridgum.com/templates/radio-fm/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 29 Nov 2018 08:12:39 GMT -->
 <head>
-    <title>RADIO FM - Bootstrap responsive template</title>
+    <title>Radyo Fırat 89.2</title>
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/radyoFırat.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/radyoFırat.png">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -241,11 +243,11 @@
                     <div class="col-sm-3 animated" data-animation="fadeInRight" data-animation-delay="200" id="top30liste">
 
                         <div class="best0">
-                            <div class="txt1">Fırat Radyo Top 30 Listesi</div>
-                            <div class="txt2">TOP 30</div>
+                            <div class="txt1">En Çok Dinlenen Şarkılar</div>
+                            <div class="txt2">TOP 30 / İLK 10</div>
                             <div class="kand2"></div>
                             <div class="best_list">
-                                @foreach (var item in Model.Top30)
+                                @foreach (var item in Model.Top30.Take(10))
                                 {
                                     <div class="clearfix">
                                         <div class="right">@item.SarkiAdi</div>
@@ -374,10 +376,10 @@
 
                         <div class="social_wrapper">
                             <ul class="social clearfix">
-                                <li class="nav1"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li class="nav2"><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li class="nav3"><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                <li class="nav4"><a href="#"><i class="fa fa-vimeo"></i></a></li>
+                                <li class="nav1"><a href="https://twitter.com/radyofirat1" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                                <li class="nav2"><a href="https://www.facebook.com/radyofirat1/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                                <li class="nav3"><a href="https://www.instagram.com/radyofirat1/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                                <li class="nav4"><a href="http://www.firat.edu.tr/tr" target="_blank"><i class="fa fa-university"></i></a></li>
                             </ul>
                         </div>
 
@@ -405,9 +407,9 @@
                             İletişim Adreslerimiz
                         </p>
 
-                        <div class="location1">Fırat Üniversitesi Rektörlük Kampüsü Merkez/Elazığ <br>Türkiye</div>
+                        <div class="location1">Fırat Üniversitesi Rektörlük Kampüsü ,Fırat Radyo ve Televizyon Müdürlüğü Merkez/Elazığ <br>Türkiye</div>
 
-                        <div class="phone1">+90 424 237 91 40 (Tel)</div>
+                        <div class="phone1">+90 424 237 00 92 (Tel)</div>
 
                         <div class="mail1"><a href="#">bilgi@firatradyotv.com</a></div>
 
