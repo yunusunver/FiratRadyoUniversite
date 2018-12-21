@@ -29,6 +29,7 @@ namespace RadyoFiratUniversite.RadyoFirat.WebUI
             services.AddScoped<IYayinDal, EfYayinDal>();
             services.AddScoped<ITop30Dal, EfTop30Dal>();
             services.AddScoped<IAdminDal, EfAdminDal>();
+            services.AddScoped<IMesajDal, EfMesajDal>();
 
             services.AddScoped<IIletisimService, IletisimManager>();
             services.AddScoped<IKunyeService, KunyeManager>();
@@ -39,6 +40,7 @@ namespace RadyoFiratUniversite.RadyoFirat.WebUI
             services.AddScoped<IYayinService, YayinManager>();
             services.AddScoped<ITop30Service, Top30Manager>();
             services.AddScoped<IAdminService, AdminManager>();
+            services.AddScoped<IMesajService, MesajManager>();
 
            
             services.AddMvc();

@@ -48,14 +48,14 @@
                     <img src="images/radyoFırat.png" alt="" class="img-responsive">
                 </a>
             </div>
-          
+
             <div id="slider_wrapper">
                 <div class="go-down"><a href="#featured" class="scroll-to"></a></div>
                 <div class="">
                     <div id="slider_inner" class="clearfix">
                         <div id="slider" class="clearfix">
                             <div id="camera_wrap">
-                                
+
                                 @foreach (var item in Model.Vitrins)
                                 {
                                     <div data-src="@item.ImageUrl">
@@ -64,11 +64,11 @@
                                             <div class="txt2 txt">@item.IkinciKelime</div>
                                             <div class="txt3 txt">@item.UcuncuKelime</div>
                                             <div class="txt4">06:00 - 24:00</div>
-                                            
+
                                         </div>
                                     </div>
                                 }
-                                
+
 
                             </div>
                         </div>
@@ -120,7 +120,7 @@
                         </header>
 
                         <div class="menu_wrapper">
-                           
+
                             <div class="navbar navbar_ navbar-default">
                                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
                                         data-target=".navbar-collapse">
@@ -149,7 +149,7 @@
                                         </li>
                                         <li><a href="#programlar">PROGRAMLAR</a></li>
                                         <li><a href="#top30liste">Top 30</a></li>
-                                        <li>@Html.ActionLink("YAYIN AKIŞI","Index","Yayinakisi")</li>
+                                        <li>@Html.ActionLink("YAYIN AKIŞI", "Index", "Yayinakisi")</li>
 
                                         <li><a href="#contacts">İLETİŞİM</a></li>
                                     </ul>
@@ -185,8 +185,8 @@
             <div class="slick-slider-wrapper">
                 <div class="container">
                     <div class="slick-slider slider center">
-                        
-                        
+
+
                         @foreach (var item in Model.Yayins)
                         {
                             <div>
@@ -194,8 +194,7 @@
                                     <figure><img src="@item.ImageUrl" alt="" class="img-responsive" style="height: 200px;width: 525px"></figure>
                                     <div class="caption">
                                         <div class="txt4"><span>@item.YayinAdi </span></div>
-                                        <div class="txt2"><span>@item.BaslangicSaati-@item.BitisSaati</span></div>
-                                        <div class="txt3"><span>@item.Gun </span></div>
+                                        <div class="txt2"><span>@item.Gun </span></div>
                                         <div class="txt3"><span>@String.Format("{0:t}", item.YayinTarihi) </span></div>
 
 
@@ -205,14 +204,14 @@
                             </div>
                         }
 
-                        
+
 
                     </div>
                 </div>
             </div>
 
 
-     
+
 
 
         </div>
@@ -220,20 +219,20 @@
         <div id="collection">
             <div class="container">
 
-               
+
 
                 <div class="title2 animated" data-animation="fadeInUp" data-animation-delay="200">
                     HAKKIMIZDA
                 </div>
-            @foreach (var item in Model.Kurumsals)
-            {
-                <div class="title3 animated" data-animation="fadeInUp" data-animation-delay="300">
+                @foreach (var item in Model.Kurumsals)
+                {
+                    <div class="title3 animated" data-animation="fadeInUp" data-animation-delay="300">
 
 
-                    @item.Tanim
+                        @item.Tanim
 
-                </div>
-            }
+                    </div>
+                }
                 <br><br>
 
                 <div class="row">
@@ -254,7 +253,7 @@
                                         <div class="left"><span>@item.TopSirasi</span>. @item.SanatciAdi</div>
                                     </div>
                                 }
-                               
+
 
                             </div>
                         </div>
@@ -266,34 +265,34 @@
         <div id="collection2">
             <div class="container">
 
-              
+
 
                 <div class="title2 animated" data-animation="fadeInUp" data-animation-delay="200">
                     RADYO YAYINCILARIMIZ
                 </div>
 
-          
+
 
                 <br><br>
 
                 <div class="row">
-                 @foreach (var item in Model.Programcis)
-                 {
-                     <div class="col-sm-2">
-                         <div class="thumb7 animated" data-animation="fadeInUp" data-animation-delay="200">
-                             <div class="thumbnail clearfix">
-                                 <figure class="">
-                                     <img src="@item.ImageUrl" alt="" class="img-responsive" style="height: 100px; width:100px">
-                                 </figure>
-                                 <div class="caption">
-                                     <div class="title">@item.AdSoyad</div>
-                                    
-                                    
-                                 </div>
-                             </div>
-                         </div>
-                     </div>
-                 }
+                    @foreach (var item in Model.Programcis)
+                    {
+                        <div class="col-sm-2">
+                            <div class="thumb7 animated" data-animation="fadeInUp" data-animation-delay="200">
+                                <div class="thumbnail clearfix">
+                                    <figure class="">
+                                        <img src="@item.ImageUrl" alt="" class="img-responsive" style="height: 100px; width:100px">
+                                    </figure>
+                                    <div class="caption">
+                                        <div class="title">@item.AdSoyad</div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
 
 
 
@@ -318,7 +317,7 @@
 
                         <div id="testim_wrapper">
 
-                            
+
                             <div class="title2">YÖNETİM KADROMUZ</div>
 
                             <div id="testim">
@@ -326,20 +325,20 @@
                                     <div class="inner">
                                         <div class="carousel main">
                                             <ul>
-                                              @foreach (var item in Model.Kunyes)
-                                              {
-                                                  <li>
-                                                      <div class="testim">
-                                                          <div class="testim_inner">
-                                                              <div class="txt1">
-                                                                 @item.Isim
-                                                              </div>
-                                                              <div class="txt2">@item.Roles.Unvani</div>
-                                                              
-                                                          </div>
-                                                      </div>
-                                                  </li>
-                                              }
+                                                @foreach (var item in Model.Kunyes)
+                                                {
+                                                    <li>
+                                                        <div class="testim">
+                                                            <div class="testim_inner">
+                                                                <div class="txt1">
+                                                                    @item.Isim
+                                                                </div>
+                                                                <div class="txt2">@item.Roles.Unvani</div>
+
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                }
 
 
 
@@ -366,13 +365,13 @@
                     </div>
                     <div class="col-sm-6 col-sm-pull-6 animated" data-animation="fadeInLeft" data-animation-delay="200">
 
-                        
+
 
                         <div class="title2">SOSYAL MEDYA HESAPLARIMIZ</div>
 
                         <br>
 
-                      
+
 
                         <div class="social_wrapper">
                             <ul class="social clearfix">
@@ -384,8 +383,58 @@
                         </div>
 
                         <div id="note"></div>
-                    
 
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="contactss">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-sm-push-6 animated" data-animation="fadeInUp" data-animation-delay="200">
+                        <img src="images/message.png" alt="" class="img-responsive">
+                    </div>
+                    <div class="col-sm-6 col-sm-pull-6 animated" data-animation="fadeInLeft" data-animation-delay="200">
+                        
+                        <div class="title2">İstek Parça</div>
+                        <br>
+                      
+                        <p>
+                            İstek parça veya mesajınız için:
+                        </p>
+                     
+                        <div id="note"></div>
+                        <div id="fields">
+                        @using (Html.BeginForm(Html.BeginForm("Index", "Home",new{@class="form-horizontal" } )))
+                        {
+                            
+                                <div class="form-group">
+                                    
+                                    <label for="inputName">Adınız</label>
+                                    
+                                   <input type="text" class="form-control" id="inputName" name="nameMesaj" value=""
+                                    onBlur="if (this.value == '') this.value = 'Adınız'"
+                                    onFocus="if (this.value == 'Adınız') this.value = ''">
+                                </div>
+
+
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label for="inputMessage">Mesajınız</label>
+
+                                            <textarea class="form-control" rows="5" id="inputMessage" name="contentMesaj"
+                                                      onBlur="if (this.value == '') this.value = 'Mesaj'"
+                                                      onFocus="if (this.value == 'Mesaj') this.value = ''"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn-default btn-cf-submit">GÖNDER</button>
+                           
+                        }
+                        </div>
 
                     </div>
                 </div>
@@ -417,33 +466,33 @@
                     <div class="col-sm-3">
 
 
-                  
+
 
                     </div>
                     <div class="col-sm-4 col-sm-offset-1">
 
                         <div class="bot1_title">İLETİŞİM KANALLARI</div>
 
-                     @foreach (var item in Model.Iletisims)
-                     {
-                         <div class="latest1">
-                             <a href="#" class="clearfix">
-                                 
-                                 <div class="caption">
-                                     <div class="txt1">
-                                         <b>@item.Ozellik</b> 
-                                     </div>
-                                     <div class="txt2">@item.Deger</div>
-                                 </div>
-                             </a>
-                         </div>
-                     }
+                        @foreach (var item in Model.Iletisims)
+                        {
+                            <div class="latest1">
+                                <a href="#" class="clearfix">
 
-                     
+                                    <div class="caption">
+                                        <div class="txt1">
+                                            <b>@item.Ozellik</b>
+                                        </div>
+                                        <div class="txt2">@item.Deger</div>
+                                    </div>
+                                </a>
+                            </div>
+                        }
 
-                    
 
-                       
+
+
+
+
 
                     </div>
                 </div>
@@ -452,7 +501,7 @@
 
         <div class="bot2_wrapper">
             <div class="container">
-                Copyright © 2018 @Html.ActionLink("ADMİN","Login","Admin") 
+                Copyright © 2018 @Html.ActionLink("ADMİN", "Login", "Admin")
             </div>
         </div>
 

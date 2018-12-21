@@ -15,5 +15,6 @@ namespace RadyoFiratUniversite.RadyoFirat.WebUI.Models
         public List<Vitrin> Vitrins { get; internal set; }
         public List<Yayin> Yayins { get; internal set; }
         public  List<Top30> Top30 { get; internal set; }
+        public Mesaj Mesajs { get; internal set; }
     }
 }

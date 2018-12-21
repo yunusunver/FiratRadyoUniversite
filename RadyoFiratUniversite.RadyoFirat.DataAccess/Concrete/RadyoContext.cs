@@ -27,5 +27,6 @@ namespace RadyoFiratUniversite.RadyoFirat.DataAccess.Concrete
         public DbSet<Yayin> Yayin { get; set; }
         public DbSet<Top30> Top30 { get; set; }
         public DbSet<Admin> Admin { get; set; }
+        public DbSet<Mesaj> Mesaj { get; set; }
     }
 }
